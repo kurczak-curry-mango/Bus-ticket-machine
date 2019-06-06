@@ -8,13 +8,18 @@ public class Window extends JFrame {
     private JButton test;
     private JPanel mainPanel;
 
+
     public Window() {
         setSize(WIDTH, HEIGHT);
         setContentPane(mainPanel);
         setLocationRelativeTo(null);
+
+
     }
 
     public JButton getTest() {
         return test;
     }
+
+
 }

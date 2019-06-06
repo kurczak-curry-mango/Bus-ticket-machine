@@ -19,6 +19,7 @@ public class WindowController {
     private void initComponents() {
         window = new Window();
         test = window.getTest();
+
     }
 
 }
