@@ -13,6 +13,7 @@ public class WindowController {
     }
 
     public void showWindowController() {
+        window.setResizable(false);
         window.setVisible(true);
     }
 
