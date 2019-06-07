@@ -47,6 +47,7 @@ public class Tickets extends  Ticket{
             for (Ticket ticket : blist)
             {
                 price += ticket.pricetopay;
+                price=(double) Math.round(price*100)/100;
             }
         }
         return price;

@@ -28,11 +28,11 @@ public class Ticket   {
     LinkedList<Ticket> createTicketTable()
     {
 
-        tickets.add(new Ticket(2.0, " Bilet normalny 20 min"));
+        tickets.add(new Ticket(2.8, " Bilet normalny 20 min"));
         tickets.add(new Ticket(1.4, " Bilet ulgowy 20 min"));
-        tickets.add(new Ticket(3.0, " Bilet normalny 40 min"));
+        tickets.add(new Ticket(3.8, " Bilet normalny 40 min"));
         tickets.add(new Ticket(1.9, " Bilet ulgowy 20 min"));
-        tickets.add(new Ticket(5.0, " Bilet normalny 60 min "));
+        tickets.add(new Ticket(6.0, " Bilet normalny 60 min "));
         tickets.add(new Ticket(3.0, " Bilet ulgowy 60 min"));
         tickets.add(new Ticket(15.0, " Bilet normalny 24"));
         tickets.add(new Ticket(7.5, " Bilet ulgowy 24h"));
