@@ -26,9 +26,11 @@ public class Window extends JFrame {
     private JButton buyTicket;
     private JButton bil1u;
     private JButton returnTicket;
-    private JTextArea textArea2;
+    public JTextArea wyswietlacz;
     private JButton button3;
-    private JLabel finalprice;
+    public JLabel finalprice;
+    private JScrollPane windowPane;
+
 
     public Tickets ticket = new Tickets();
 
@@ -36,7 +38,8 @@ public class Window extends JFrame {
         setSize(WIDTH, HEIGHT);
         setContentPane(mainPanel);
         setLocationRelativeTo(null);
-
+        finalprice.setText("Do zaplaty: 0zl");
+        finalprice.setFont(new Font("Roboto", Font.PLAIN, 20));
         bil1n.setText("<html> <p style=\"text-align:center;\">Bilet 20min normalny<br>2,80zł</p></html>");
         bil2n.setText("<html> <p style=\"text-align:center;\">Bilet 40min normalny<br>3,80zł</p></html>");
         bil3n.setText("<html> <p style=\"text-align:center;\">Bilet 60min normalny<br>6,00zł</p></html>");
@@ -50,28 +53,43 @@ public class Window extends JFrame {
         returnTicket.setText("<html> <p style=\"text-align:center;\">ZWRÓĆ BILET</p></html>");
         returnMoney.setText("<html> <p style=\"text-align:center;\">ZWRÓĆ PIENIĄDZE</p></html>");
         buyTicket.setText("<html> <p style=\"text-align:center;\">KUP BILETY</p></html>");
+        wyswietlacz.setSize(50, 50);
+        wyswietlacz.setRows(10);
+        wyswietlacz.setFont(new Font("Roboto", Font.PLAIN, 14));
+        wyswietlacz.setText("Wybrano bilety: ");
+        wyswietlacz.setLineWrap(true);
+        windowPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         bil1n.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ticket.addTickets(0);
+                finalprice.setText(String.valueOf("Do zaplaty: " + ticket.priceFinal() + "zl"));
+                wyswietlacz.setText("Wybrano bilety: " + ticket.getBlist());
             }
         });
         bil1u.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ticket.addTickets(1);
+                finalprice.setText(String.valueOf("Do zaplaty: " + ticket.priceFinal() + "zl"));
+                wyswietlacz.setText("Wybrano bilety: " + ticket.getBlist());
+
             }
         });
         bil2n.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ticket.addTickets(2);
+                finalprice.setText(String.valueOf("Do zaplaty: " + ticket.priceFinal() + "zl"));
+                wyswietlacz.setText("Wybrano bilety: " + ticket.getBlist());
             }
         });
         bil2u.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ticket.addTickets(3);
+                finalprice.setText(String.valueOf("Do zaplaty: " + ticket.priceFinal() + "zl"));
+                wyswietlacz.setText("Wybrano bilety: " + ticket.getBlist());
             }
         });
         bil3n.addActionListener(new ActionListener() {
@@ -176,8 +194,6 @@ public class Window extends JFrame {
         bil2u = new JButton();
         bil2u.setText("Button");
         mainPanel.add(bil2u, new com.intellij.uiDesigner.core.GridConstraints(1, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        textArea2 = new JTextArea();
-        mainPanel.add(textArea2, new com.intellij.uiDesigner.core.GridConstraints(5, 3, 3, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 50), null, 0, false));
         button3 = new JButton();
         button3.setEnabled(false);
         button3.setText("");
@@ -185,6 +201,11 @@ public class Window extends JFrame {
         finalprice = new JLabel();
         finalprice.setText("Label");
         mainPanel.add(finalprice, new com.intellij.uiDesigner.core.GridConstraints(8, 3, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        windowPane = new JScrollPane();
+        mainPanel.add(windowPane, new com.intellij.uiDesigner.core.GridConstraints(5, 3, 3, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        wyswietlacz = new JTextArea();
+        wyswietlacz.setMaximumSize(new Dimension(2147483647, 2147483647));
+        windowPane.setViewportView(wyswietlacz);
     }
 
     /**

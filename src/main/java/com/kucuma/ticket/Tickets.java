@@ -1,7 +1,6 @@
 package com.kucuma.ticket;
 
 import java.util.Scanner;
-
 public class Tickets extends  Ticket{
     static int number=0;
    public Tickets()
@@ -12,6 +11,7 @@ public class Tickets extends  Ticket{
    public void addTickets(int index)
     {
         this.blist.add(tickets.get(index));
+        System.out.println();
     };
 
    public void removeTickets()
