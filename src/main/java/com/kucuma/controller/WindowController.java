@@ -4,7 +4,7 @@ import com.kucuma.view.Window;
 
 import javax.swing.*;
 
-public class WindowController {
+public class                WindowController {
     private Window window;
     private JButton test;
 

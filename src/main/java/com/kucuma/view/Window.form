@@ -113,15 +113,7 @@
           <text value="Button"/>
         </properties>
       </component>
-      <component id="698d" class="javax.swing.JTextArea" binding="textArea2" default-binding="true">
-        <constraints>
-          <grid row="5" column="3" row-span="3" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="50"/>
-          </grid>
-        </constraints>
-        <properties/>
-      </component>
-      <component id="be699" class="javax.swing.JButton" binding="button3" default-binding="true">
+      <component id="be699" class="javax.swing.JButton" binding="billonMenu">
         <constraints>
           <grid row="0" column="3" row-span="5" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -138,6 +130,21 @@
           <text value="Label"/>
         </properties>
       </component>
+      <scrollpane id="9f6ad" binding="windowPane">
+        <constraints>
+          <grid row="5" column="3" row-span="3" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="698d" class="javax.swing.JTextArea" binding="wyswietlacz">
+            <constraints/>
+            <properties>
+              <maximumSize width="2147483647" height="2147483647"/>
+            </properties>
+          </component>
+        </children>
+      </scrollpane>
     </children>
   </grid>
 </form>
