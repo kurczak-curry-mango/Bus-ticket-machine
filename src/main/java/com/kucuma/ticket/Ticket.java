@@ -5,14 +5,14 @@ import java.util.LinkedList;
 
 public class Ticket   {
 
-    public double pricetopay; // cena biletow
-    public String type; //rodzaj biletu
-    public LinkedList<Ticket> blist = new LinkedList<Ticket>(); //lista biletów w koszyku
-    public LinkedList<Ticket> tickets = new LinkedList<Ticket>(); // lista wszystkich dostepnyh koszuków
+    protected double pricetopay; // cena biletow
+    protected String type; //rodzaj biletu
+    protected LinkedList<Ticket> blist = new LinkedList<Ticket>(); //lista biletów w koszyku
+    protected LinkedList<Ticket> tickets = new LinkedList<Ticket>(); // lista wszystkich dostepnyh koszuków
     //String bought = ""; nie wiem wiec zakomentowałem
 
 
-    Ticket()
+    protected Ticket()
     {
         createTicketTable();
     };
@@ -43,20 +43,20 @@ public class Ticket   {
 
 
     //zwraca kwote do zapłaty
-    public double getPricetopay() {
+    protected double getPricetopay() {
         return pricetopay;
     };
 
     //zwraca
-    public String getType() {
+    protected String getType() {
         return type;
     };
 
-    public LinkedList<Ticket> getBlist() {
+    protected LinkedList<Ticket> getBlist() {
         return blist;
     };
 
-    public LinkedList<Ticket> getTickets() {
+    protected LinkedList<Ticket> getTickets() {
         return tickets;
     };
 

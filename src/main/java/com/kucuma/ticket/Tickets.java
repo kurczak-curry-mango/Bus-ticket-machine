@@ -35,7 +35,7 @@ public class Tickets extends  Ticket{
         {   int number=1;
             name.append("Wybrano bilety: \n");
             for (Ticket ticket : blist) {
-                name.append(number).append(". ").append(ticket.type).append("\n");
+                name.append(number).append(". ").append(ticket.getType()).append("\n");
                 number++;
             }
         }
