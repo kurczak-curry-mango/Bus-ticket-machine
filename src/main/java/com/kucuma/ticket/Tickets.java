@@ -2,7 +2,6 @@ package com.kucuma.ticket;
 
 import java.util.Scanner;
 public class Tickets extends  Ticket{
-    static int number=0;
    public Tickets()
     {
         super();
