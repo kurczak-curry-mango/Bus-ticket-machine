@@ -2,6 +2,7 @@ package com.kucuma.controller;
 
 import com.kucuma.ticket.Tickets;
 import com.kucuma.view.Window;
+import com.kucuma.controller.MoneyWindowController;
 
 import javax.swing.*;
 import java.awt.*;
@@ -23,16 +24,17 @@ public class                WindowController {
     private JButton buyTicket;
     private JButton bil1u;
     private JButton returnTicket;
-    public JTextArea wyswietlacz;
+    private JTextArea wyswietlacz;
     private JButton billonMenu;
-    public JLabel finalprice;
+    private JLabel finalprice;
     private JScrollPane windowPane;
+    private MoneyWindowController MoneyController;
 
-    public Tickets ticket = new Tickets();
+    private Tickets ticket = new Tickets();
 
     public WindowController() {
         initComponents();
-        initApearande();
+        initApearance();
         initListeners();
     }
 
@@ -60,9 +62,10 @@ public class                WindowController {
         billonMenu=window.getBillonMenu();
         finalprice=window.getFinalprice();
         windowPane=window.getWindowPane();
+        MoneyController = new MoneyWindowController();
 
     }
-    private void initApearande(){
+    private void initApearance(){
         finalprice.setText("Do zaplaty: 0zl");
         finalprice.setFont(new Font("Roboto", Font.PLAIN, 20));
         bil1n.setText("<html> <p style=\"text-align:center;\">Bilet 20min normalny<br>2,80zł</p></html>");
@@ -78,6 +81,8 @@ public class                WindowController {
         returnTicket.setText("<html> <p style=\"text-align:center;\">ZWRÓĆ BILET</p></html>");
         returnMoney.setText("<html> <p style=\"text-align:center;\">ZWRÓĆ PIENIĄDZE</p></html>");
         buyTicket.setText("<html> <p style=\"text-align:center;\">KUP BILETY</p></html>");
+        billonMenu.setIcon(new ImageIcon("src/main/java/com/kucuma/images/wallet.png"));
+        //setText("<html> <p style=\\\"text-align:center;\\\">OKNO!!</p></html>");
         wyswietlacz.setSize(50, 50);
         wyswietlacz.setRows(10);
         wyswietlacz.setFont(new Font("Roboto", Font.PLAIN, 14));
@@ -158,12 +163,20 @@ public class                WindowController {
         }
     });
         returnTicket.addActionListener(new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            ticket.removeTickets();
-            updateStrings();
-        }
-    });}
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ticket.removeTickets();
+                updateStrings();
+            }
+    });
+        billonMenu.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                MoneyController.showWindowController();
+            }
+        });
+    }
+
     private void updateStrings(){
         finalprice.setText("Do zaplaty: " + ticket.priceFinal() + "zl");
         wyswietlacz.setText(ticket.bilety());
