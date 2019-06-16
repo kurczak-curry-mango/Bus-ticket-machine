@@ -6,12 +6,10 @@ import com.kucuma.ticket.Tickets;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class Window extends JFrame {
     private static final int WIDTH = 800;
     private static final int HEIGHT = 600;
-    private JButton test;
     private JPanel mainPanel;
     private JButton returnMoney;
     private JButton bil4u;
@@ -31,117 +29,82 @@ public class Window extends JFrame {
     public JLabel finalprice;
     private JScrollPane windowPane;
 
-
-    public Tickets ticket = new Tickets();
-
     public Window() {
         setSize(WIDTH, HEIGHT);
         setContentPane(mainPanel);
         setLocationRelativeTo(null);
-        finalprice.setText("Do zaplaty: 0zl");
-        finalprice.setFont(new Font("Roboto", Font.PLAIN, 20));
-        bil1n.setText("<html> <p style=\"text-align:center;\">Bilet 20min normalny<br>2,80zł</p></html>");
-        bil2n.setText("<html> <p style=\"text-align:center;\">Bilet 40min normalny<br>3,80zł</p></html>");
-        bil3n.setText("<html> <p style=\"text-align:center;\">Bilet 60min normalny<br>6,00zł</p></html>");
-        bil4n.setText("<html> <p style=\"text-align:center;\">Bilet 24h normalny<br>15,00zł</p></html>");
-        bil5n.setText("<html> <p style=\"text-align:center;\">Bilet 48h normalny<br>24,00zł</p></html>");
-        bil1u.setText("<html> <p style=\"text-align:center;\">Bilet 20min ulgowy<br>1,40zł</p></html>");
-        bil2u.setText("<html> <p style=\"text-align:center;\">Bilet 40min ulgowy<br>1,90zł</p></html>");
-        bil3u.setText("<html> <p style=\"text-align:center;\">Bilet 60min ulgowy<br>3,00zł</p></html>");
-        bil4u.setText("<html> <p style=\"text-align:center;\">Bilet 24h ulgowy<br>7,50zł</p></html>");
-        bil5u.setText("<html> <p style=\"text-align:center;\">Bilet 48h ulgowy<br>12,00zł</p></html>");
-        returnTicket.setText("<html> <p style=\"text-align:center;\">ZWRÓĆ BILET</p></html>");
-        returnMoney.setText("<html> <p style=\"text-align:center;\">ZWRÓĆ PIENIĄDZE</p></html>");
-        buyTicket.setText("<html> <p style=\"text-align:center;\">KUP BILETY</p></html>");
-        wyswietlacz.setSize(50, 50);
-        wyswietlacz.setRows(10);
-        wyswietlacz.setFont(new Font("Roboto", Font.PLAIN, 14));
-        wyswietlacz.setText("Wybierz bilet \n");
-        wyswietlacz.setLineWrap(true);
-        windowPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-        bil1n.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                ticket.addTickets(0);
-                updateStrings();
-            }
-        });
-        bil1u.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                ticket.addTickets(1);
-                updateStrings();
-
-            }
-        });
-        bil2n.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                ticket.addTickets(2);
-                updateStrings();
-            }
-        });
-        bil2u.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                ticket.addTickets(3);
-                updateStrings();
-            }
-        });
-        bil3n.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                ticket.addTickets(4);
-            }
-        });
-        bil3u.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                ticket.addTickets(5);
-            }
-        });
-        bil4n.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                ticket.addTickets(6);
-            }
-        });
-        bil4u.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                ticket.addTickets(7);
-            }
-        });
-        bil5n.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                ticket.addTickets(8);
-            }
-        });
-        bil5u.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                ticket.addTickets(9);
-            }
-        });
-        returnTicket.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                ticket.removeTickets();
-                updateStrings();
-            }
-        });
-
 
     }
-    private void updateStrings(){
-        finalprice.setText("Do zaplaty: " + ticket.priceFinal() + "zl");
-        wyswietlacz.setText(ticket.bilety());
+
+    public JButton getReturnMoney() {
+        return returnMoney;
     }
 
-    public JButton getTest() {
-        return test;
+    public JButton getBil4u() {
+        return bil4u;
     }
+
+    public JButton getBil4n() {
+        return bil4n;
+    }
+
+    public JButton getBil3n() {
+        return bil3n;
+    }
+
+    public JButton getBil3u() {
+        return bil3u;
+    }
+
+    public JButton getBil2u() {
+        return bil2u;
+    }
+
+    public JButton getBil2n() {
+        return bil2n;
+    }
+
+    public JButton getBil5u() {
+        return bil5u;
+    }
+
+    public JButton getBil5n() {
+        return bil5n;
+    }
+
+    public JButton getBil1n() {
+        return bil1n;
+    }
+
+    public JButton getBuyTicket() {
+        return buyTicket;
+    }
+
+    public JButton getBil1u() {
+        return bil1u;
+    }
+
+    public JButton getReturnTicket() {
+        return returnTicket;
+    }
+
+    public JTextArea getWyswietlacz() {
+        return wyswietlacz;
+    }
+
+    public JButton getBillonMenu() {
+        return billonMenu;
+    }
+
+    public JLabel getFinalprice() {
+        return finalprice;
+    }
+
+    public JScrollPane getWindowPane() {
+        return windowPane;
+    }
+
+
 
     {
 // GUI initializer generated by IntelliJ IDEA GUI Designer
