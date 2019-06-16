@@ -191,3 +191,4 @@ public class                WindowController {
         wyswietlacz.setText(ticket.bilety());
 
 }}
+
