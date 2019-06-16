@@ -26,6 +26,7 @@ public class Window extends JFrame {
     private JButton billonMenu;
     public JLabel finalprice;
     private JScrollPane windowPane;
+    private JLabel moneyThrown;
 
     public Window() {
         setSize(WIDTH, HEIGHT);
@@ -97,6 +98,10 @@ public class Window extends JFrame {
 
     public JLabel getFinalprice() {
         return finalprice;
+    }
+
+    public JLabel getMoneyThrown() {
+        return moneyThrown;
     }
 
     public JScrollPane getWindowPane() {

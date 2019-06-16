@@ -29,6 +29,8 @@ public class                WindowController {
     private JLabel finalprice;
     private JScrollPane windowPane;
     private MoneyWindowController MoneyController;
+    private JLabel moneyThrown;
+
 
     private Tickets ticket = new Tickets();
 
@@ -36,6 +38,7 @@ public class                WindowController {
         initComponents();
         initApearance();
         initListeners();
+        window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 
     public void showWindowController() {
@@ -63,11 +66,14 @@ public class                WindowController {
         finalprice=window.getFinalprice();
         windowPane=window.getWindowPane();
         MoneyController = new MoneyWindowController();
+        moneyThrown=window.getMoneyThrown();
 
     }
     private void initApearance(){
         finalprice.setText("Do zaplaty: 0zl");
         finalprice.setFont(new Font("Roboto", Font.PLAIN, 20));
+        moneyThrown.setText("Wrzucono: 0zl");
+        moneyThrown.setFont(new Font("Roboto", Font.PLAIN, 20));
         bil1n.setText("<html> <p style=\"text-align:center;\">Bilet 20min normalny<br>2,80zł</p></html>");
         bil2n.setText("<html> <p style=\"text-align:center;\">Bilet 40min normalny<br>3,80zł</p></html>");
         bil3n.setText("<html> <p style=\"text-align:center;\">Bilet 60min normalny<br>6,00zł</p></html>");
@@ -88,6 +94,7 @@ public class                WindowController {
         wyswietlacz.setFont(new Font("Roboto", Font.PLAIN, 14));
         wyswietlacz.setText("Wybierz bilet \n");
         wyswietlacz.setLineWrap(true);
+        wyswietlacz.setEditable(false);
         windowPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
     }
     private void initListeners(){
@@ -179,6 +186,8 @@ public class                WindowController {
 
     private void updateStrings(){
         finalprice.setText("Do zaplaty: " + ticket.priceFinal() + "zl");
+        // PO DODANIU KLASY COIN NALEZY UZUPELNIC O ZMIENNA PRZECHOWYWUJACA WRZUCONE PIENIADZE
+       // moneyThrown.setText("Wrzucono: "+ XXXXX + "zl");
         wyswietlacz.setText(ticket.bilety());
 
 }}

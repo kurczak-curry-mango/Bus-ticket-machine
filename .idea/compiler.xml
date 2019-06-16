@@ -6,8 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Bus-ticket-machine" />
         <module name="TicketMachine" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Bus-ticket-machine" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>

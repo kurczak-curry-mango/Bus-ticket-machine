@@ -2,10 +2,12 @@ package com.kucuma.view;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class MoneyWindow extends JFrame {
     private static final int WIDTH = 500;
-    private static final int HEIGHT = 400;
+    private static final int HEIGHT = 600;
     private JPanel panel1;
     private JButton throw10gr;
     private JButton throw20gr;
@@ -18,10 +20,14 @@ public class MoneyWindow extends JFrame {
     private JButton throw50zl;
     private JButton throw200zl;
     private JButton ExitButton;
+    private JButton throw100zl;
+    private JButton payByCard;
+
     public MoneyWindow() {
         setSize(WIDTH, HEIGHT);
         setContentPane(panel1);
         setLocationRelativeTo(null);
+
     }
 
     public JButton getThrow10gr() {
@@ -60,8 +66,11 @@ public class MoneyWindow extends JFrame {
         return throw50zl;
     }
 
-    public JButton getThrow200zl() {
-        return throw200zl;
+    public JButton getThrow100zl() {
+        return throw100zl;
+    }
+    public JButton getPayByCard(){
+        return payByCard;
     }
 
     public JButton getExitButton() {
