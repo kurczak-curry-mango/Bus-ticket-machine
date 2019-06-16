@@ -7,6 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URL;
 
 public class Window extends JFrame {
     private static final int WIDTH = 800;
@@ -37,7 +38,10 @@ public class Window extends JFrame {
         setContentPane(mainPanel);
         setLocationRelativeTo(null);
 
-        bil1n.setText("<html> <p style=\"text-align:center;\">Bilet 20min normalny<br>2,80zł</p></html>");
+        ImageIcon ImageIcon = new ImageIcon("1.png");
+        Image Image = ImageIcon.getImage();
+        bil1n.setIcon(new ImageIcon(Image));
+        //  bil1n.setText("<html> <p style=\"text-align:center;\">Bilet 20min normalny<br>2,80zł</p></html>");
         bil2n.setText("<html> <p style=\"text-align:center;\">Bilet 40min normalny<br>3,80zł</p></html>");
         bil3n.setText("<html> <p style=\"text-align:center;\">Bilet 60min normalny<br>6,00zł</p></html>");
         bil4n.setText("<html> <p style=\"text-align:center;\">Bilet 24h normalny<br>15,00zł</p></html>");
@@ -110,8 +114,8 @@ public class Window extends JFrame {
                 ticket.addTickets(9);
             }
         });
-
-
+        setVisible(true);
+        validate();
     }
 
     public JButton getTest() {
