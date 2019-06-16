@@ -9,9 +9,20 @@ public class Tickets extends  Ticket{
 
    public void addTickets(int index)
     {
-        this.blist.add(tickets.get(index));
-        System.out.println("dodano bilet "+index);
-    };
+        boolean tmp=true;
+        for(Ticket ticket : blist){
+            if(ticket==tickets.get(index)){
+                ticket.setTicketAmmount();
+                //System.out.println("prawda!");
+                tmp=false;
+            }
+        }
+        if(tmp) {
+            this.blist.add(tickets.get(index));
+            System.out.println("dodano bilet " + index);
+        }
+
+        };
 
    public void removeTickets()
    {
@@ -33,9 +44,13 @@ public class Tickets extends  Ticket{
             name.append("Nie wybrales zadnego biletu!!");
         else
         {   int number=1;
-            name.append("Wybrano bilety: \n");
+            //String format = "%2d %1$-30s %3d";
+            String line=String.format("%3s %15s %15s\n", "Nr.", "Typ biletu", "ilosc") ;
+            name.append(line);
             for (Ticket ticket : blist) {
-                name.append(number).append(". ").append(ticket.getType()).append("\n");
+                line= String.format("%2d. %-25s %-4d", number, ticket.type, ticket.TicketAmmount );
+                //System.out.println(line);
+                name.append(line).append("\n");
                 number++;
             }
         }
@@ -51,7 +66,7 @@ public class Tickets extends  Ticket{
         {
             for (Ticket ticket : blist)
             {
-                price += ticket.pricetopay;
+                price += ticket.pricetopay*ticket.getTicketAmmount();
                 price=(double) Math.round(price*100)/100;
             }
         }
