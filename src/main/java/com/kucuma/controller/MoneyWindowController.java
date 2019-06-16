@@ -5,6 +5,7 @@ import com.kucuma.view.MoneyWindow;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 public class MoneyWindowController {
     private MoneyWindow MoneyWind;
@@ -17,7 +18,6 @@ public class MoneyWindowController {
     private JButton throw2zl;
     private JButton throw5zl;
     private JButton throw50zl;
-    private JButton throw200zl;
     private JButton ExitButton;
     private JButton throw100zl;
     private JButton payByCard;
@@ -30,7 +30,7 @@ public class MoneyWindowController {
     public MoneyWindowController() {
         initComponents();
         initApearande();
-       // initListeners();
+        initListeners();
     }
 
     private void initComponents(){
@@ -45,6 +45,7 @@ public class MoneyWindowController {
         throw20zl=MoneyWind.getThrow20zl();
         throw50zl=MoneyWind.getThrow50zl();
         throw100zl=MoneyWind.getThrow100zl();
+        ExitButton=MoneyWind.getExitButton();
         payByCard=MoneyWind.getPayByCard();
 
 
@@ -65,77 +66,78 @@ public class MoneyWindowController {
         payByCard.setText("<html> <p style=\"text-align:center;\">Zaplac karta poprzez zblizenie</p></html>");
     }
     private void initListeners(){
-        throw10gr.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-        throw20gr.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-        throw50gr.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-        throw1zl.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-        throw2zl.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-        throw5zl.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-        payByCard.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-        throw10zl.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-        throw20zl.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-        throw50zl.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-        throw100zl.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-        ExitButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
+//            throw10gr.addActionListener(new ActionListener() {
+//                @Override
+//                public void actionPerformed(ActionEvent e) {
+//                    ;
+//                }
+//            });
+//            throw20gr.addActionListener(new ActionListener() {
+//                @Override
+//                public void actionPerformed(ActionEvent e) {
+//                    ;
+//                }
+//            });
+//            throw50gr.addActionListener(new ActionListener() {
+//                @Override
+//                public void actionPerformed(ActionEvent e) {
+//                    ;
+//                }
+//            });
+//            throw1zl.addActionListener(new ActionListener() {
+//                @Override
+//                public void actionPerformed(ActionEvent e) {
+//                    ;
+//                }
+//            });
+//            throw2zl.addActionListener(new ActionListener() {
+//                @Override
+//                public void actionPerformed(ActionEvent e) {
+//                    ;
+//                }
+//            });
+//            throw5zl.addActionListener(new ActionListener() {
+//                @Override
+//                public void actionPerformed(ActionEvent e) {
+//                    ;
+//                }
+//            });
+//            payByCard.addActionListener(new ActionListener() {
+//                @Override
+//                public void actionPerformed(ActionEvent e) {
+//                    ;
+//                }
+//            });
+//            throw10zl.addActionListener(new ActionListener() {
+//                @Override
+//                public void actionPerformed(ActionEvent e) {
+//                    ;
+//                }
+//            });
+//            throw20zl.addActionListener(new ActionListener() {
+//                @Override
+//                public void actionPerformed(ActionEvent e) {
+//                    ;
+//                }
+//            });
+//            throw50zl.addActionListener(new ActionListener() {
+//                @Override
+//                public void actionPerformed(ActionEvent e) {
+//                    ;
+//                }
+//            });
+//            throw100zl.addActionListener(new ActionListener() {
+//                @Override
+//                public void actionPerformed(ActionEvent e) {
+//                    ;
+//                }
+//            });
+            ExitButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    MoneyWind.setVisible(false);
+                }
+            });
+        }
     }
-}
+

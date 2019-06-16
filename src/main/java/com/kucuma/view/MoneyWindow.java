@@ -1,9 +1,6 @@
 package com.kucuma.view;
 
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class MoneyWindow extends JFrame {
     private static final int WIDTH = 500;
@@ -18,7 +15,6 @@ public class MoneyWindow extends JFrame {
     private JButton throw2zl;
     private JButton throw5zl;
     private JButton throw50zl;
-    private JButton throw200zl;
     private JButton ExitButton;
     private JButton throw100zl;
     private JButton payByCard;

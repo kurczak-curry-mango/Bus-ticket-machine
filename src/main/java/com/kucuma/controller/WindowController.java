@@ -91,7 +91,7 @@ public class                WindowController {
         //setText("<html> <p style=\\\"text-align:center;\\\">OKNO!!</p></html>");
         wyswietlacz.setSize(50, 50);
         wyswietlacz.setRows(10);
-        wyswietlacz.setFont(new Font("Roboto", Font.PLAIN, 14));
+        wyswietlacz.setFont(new Font("Consolas", Font.PLAIN, 14));
         wyswietlacz.setText("Wybierz bilet \n");
         wyswietlacz.setLineWrap(true);
         wyswietlacz.setEditable(false);

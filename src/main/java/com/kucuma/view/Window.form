@@ -140,6 +140,7 @@
           <component id="698d" class="javax.swing.JTextArea" binding="wyswietlacz">
             <constraints/>
             <properties>
+              <columns value="2"/>
               <maximumSize width="2147483647" height="2147483647"/>
             </properties>
           </component>
