@@ -1,4 +1,5 @@
 package com.kucuma;
+import com.kucuma.coin.Coins;
 import com.kucuma.controller.WindowController;
 import com.kucuma.ticket.Tickets;
 
@@ -19,6 +20,14 @@ public class App
 //        t.addTickets(1);
 //        t.removeTickets();
 //        System.out.println(t.priceFinal() + t.bilety());
+        Coins c = new Coins();
 
+        c.insertCoin(3);
+        c.insertCoin(3);
+        c.insertCoin(3);
+        c.insertCoin(3);
+        System.out.println(c.howMuchmoney());
+        c.removeCoins();
+        System.out.println(c.howMuchmoney());
     }
 }

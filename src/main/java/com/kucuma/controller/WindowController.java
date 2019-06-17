@@ -9,7 +9,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class                WindowController {
+public class WindowController {
     private Window window;
     private JButton returnMoney;
     private JButton bil4u;
