@@ -30,7 +30,8 @@ public class Tickets extends  Ticket{
        //System.out.println("Podaj nr biletu który chcesz usunąć");
        //int nr = scan.nextInt();
        try {
-           this.blist.remove(blist.size()-1);
+           blist.getLast().setTicketAmmount(1);
+           this.blist.removeLast();
        }catch (IndexOutOfBoundsException e){
            System.out.println("Nie ma takiego indexu");
        }

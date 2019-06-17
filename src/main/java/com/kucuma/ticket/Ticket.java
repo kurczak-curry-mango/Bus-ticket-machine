@@ -55,6 +55,7 @@ public class Ticket   {
     };
     public int getTicketAmmount(){ return TicketAmmount;};
     void setTicketAmmount(){ TicketAmmount+=1;};
+    void setTicketAmmount(int i){ TicketAmmount=i;};
     public LinkedList<Ticket> getBlist() {
         return blist;
     };
