@@ -8,6 +8,7 @@ import com.kucuma.controller.MoneyWindowController;
 import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
+import com.kucuma.StringHandler;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -36,7 +37,7 @@ public class WindowController {
     private MoneyWindowController MoneyController;
     private JLabel moneyThrown;
 
-
+    public StringHandler stringHandler= new StringHandler();
     private Tickets ticket = new Tickets();
     private Coins coin=new Coins();
     ImageIcon img = new ImageIcon("src/main/java/com/kucuma/images/ikona.png");
@@ -84,7 +85,7 @@ public class WindowController {
         finalprice.setFont(new Font("Roboto", Font.PLAIN, 20));
         moneyThrown.setText("Wrzucono: 0.00zl");
         moneyThrown.setFont(new Font("Roboto", Font.PLAIN, 20));
-        bil1n.setText("<html> <p style=\"text-align:center;\">Bilet 20min normalny<br>2,80zł</p></html>");
+        bil1n.setText("testuj tu");
         bil2n.setText("<html> <p style=\"text-align:center;\">Bilet 40min normalny<br>3,80zł</p></html>");
         bil3n.setText("<html> <p style=\"text-align:center;\">Bilet 60min normalny<br>6,00zł</p></html>");
         bil4n.setText("<html> <p style=\"text-align:center;\">Bilet 24h normalny<br>15,00zł</p></html>");
