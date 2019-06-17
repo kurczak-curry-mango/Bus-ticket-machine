@@ -13,12 +13,15 @@ public class Tickets extends  Ticket{
         for(Ticket ticket : blist){
             if(ticket==tickets.get(index)){
                 ticket.setTicketAmmount();
+                ticketsInCart.add(ticket.getType());
                 //System.out.println("prawda!");
                 tmp=false;
+                break;
             }
         }
         if(tmp) {
             this.blist.add(tickets.get(index));
+            ticketsInCart.add(tickets.get(index).getType());
             System.out.println("dodano bilet " + index);
         }
 
@@ -31,8 +34,19 @@ public class Tickets extends  Ticket{
        //int nr = scan.nextInt();
        try {
            if(blist.size()>0){
-           blist.getLast().setTicketAmmount(1);
-           this.blist.removeLast();
+           //blist.getLast().setTicketAmmountM();
+           for(Ticket ticket: blist){
+               if(ticket.getType().equals(ticketsInCart.getLast())&&ticket.getTicketAmmount()>1){
+                   ticket.setTicketAmmountM();
+                   ticketsInCart.removeLast();
+                   break;
+               }
+               else if(ticket.getType().equals(ticketsInCart.getLast())&&ticket.getTicketAmmount()==1){
+                   blist.remove(ticket);
+                   ticketsInCart.removeLast();
+                   break;
+               }
+           }
            }
            else System.out.println("nie ma biletu");
        }catch (IndexOutOfBoundsException e){

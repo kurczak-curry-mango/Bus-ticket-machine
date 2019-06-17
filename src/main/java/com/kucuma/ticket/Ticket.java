@@ -10,6 +10,7 @@ public class Ticket   {
     public String type; //rodzaj biletu
     public LinkedList<Ticket> blist = new LinkedList<Ticket>(); //lista biletów w koszyku
     public LinkedList<Ticket> tickets = new LinkedList<Ticket>(); // lista wszystkich dostepnyh koszuków
+    public LinkedList<String> ticketsInCart= new LinkedList<>();
     //String bought = ""; nie wiem wiec zakomentowałem
 
 
@@ -55,6 +56,7 @@ public class Ticket   {
     };
     public int getTicketAmmount(){ return TicketAmmount;};
     void setTicketAmmount(){ TicketAmmount+=1;};
+    void setTicketAmmountM(){ TicketAmmount-=1;}
     void setTicketAmmount(int i){ TicketAmmount=i;};
     public LinkedList<Ticket> getBlist() {
         return blist;
