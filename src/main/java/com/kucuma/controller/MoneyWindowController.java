@@ -5,9 +5,10 @@ import com.kucuma.view.MoneyWindow;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import com.kucuma.coin.Coins;
 import java.io.IOException;
 
-public class MoneyWindowController {
+public class MoneyWindowController  {
     private MoneyWindow MoneyWind;
     private JButton throw10gr;
     private JButton throw20gr;
@@ -21,17 +22,21 @@ public class MoneyWindowController {
     private JButton ExitButton;
     private JButton throw100zl;
     private JButton payByCard;
-
+    private JLabel moneyThrown;
+    private Coins coin;
     public void showWindowController() {
         MoneyWind.setResizable(false);
         MoneyWind.setVisible(true);
     }
 
-    public MoneyWindowController() {
+    public MoneyWindowController(JLabel moneyThrown, Coins coin) {
         initComponents();
         initApearande();
         initListeners();
+        this.moneyThrown=moneyThrown;
+        this.coin=coin;
     }
+
 
     private void initComponents(){
         MoneyWind=new MoneyWindow();
@@ -66,12 +71,15 @@ public class MoneyWindowController {
         payByCard.setText("<html> <p style=\"text-align:center;\">Zaplac karta poprzez zblizenie</p></html>");
     }
     private void initListeners(){
-//            throw10gr.addActionListener(new ActionListener() {
-//                @Override
-//                public void actionPerformed(ActionEvent e) {
-//                    ;
-//                }
-//            });
+            throw10gr.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                   coin.insertCoin(1);
+                    System.out.println(coin.howMuchmoney());
+                    moneyThrown.setText("Wrzucono: "+ coin.howMuchmoney() + "zl");
+
+                }
+            });
 //            throw20gr.addActionListener(new ActionListener() {
 //                @Override
 //                public void actionPerformed(ActionEvent e) {

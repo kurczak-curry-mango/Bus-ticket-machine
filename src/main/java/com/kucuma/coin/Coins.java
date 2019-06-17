@@ -1,45 +1,23 @@
 package com.kucuma.coin;
 
-import java.util.LinkedList;
-
 public class Coins extends Coin{
-
-    //zmienne
-    private static int amountOfCoins=0; //licza monet wrzucanych limit
-    private LinkedList<Coin> coins=new LinkedList<>(); //rodzaje
-    private LinkedList<Coin> moneyThrowed =new LinkedList<>(); // wrzucone
-
-//konstruktor
-    public Coins(){ createCoinList(coins); }
-
-//tworzenie listy obietkow Coin
-    private void createCoinList(LinkedList obj){
-        obj.add(new Coin("0.05 groszy", 0.05));
-        obj.add(new Coin("10 groszy", 0.1));
-        obj.add(new Coin("20 groszy", 0.2));
-        obj.add(new Coin("50 groszy", 0.5));
-        obj.add(new Coin( "1 złoty",1 ));
-        obj.add(new Coin( "2 złoty",2 ));
-        obj.add(new Coin( "5 złoty",5 ));
-        obj.add(new Coin( "10 złoty",10 ));
-        obj.add(new Coin( "20 złoty",20 ));
-        obj.add(new Coin( "50 złoty",50 ));
-        obj.add(new Coin( "100 złoty",50 ));
+static int amountOfCoins=0;
+    Coins(){
+        super();
     }
-    //dodwanie
-    public void insertCoin(int inx) {
+
+    void insertCoin(int inx) //dodwanie
+    {
         if(amountOfCoins<200) {
             this.moneyThrowed.add(coins.get(inx));
-            if(coins.get(inx).getValue() > 5)
-                System.out.println("dodano monete " + coins.get(inx).getName());
-            else
-                System.out.println("dodano banknot " + coins.get(inx).getName());
+            System.out.println("dodano bilet " + inx);
             amountOfCoins++;
         }else
             System.out.println("Przekroczono już limit monet!!!");
     }
-    //usuwanie monet
-    public void removeCoins() {
+
+    void removeCoins() //usuwanie
+    {
             try {
                this.moneyThrowed.clear();
                 amountOfCoins=0;
@@ -49,11 +27,27 @@ public class Coins extends Coin{
             }
     }
 
-    //Kwota Wrzucona do automatu
-    public double howMuchmoney() {
+    public String coinsInserted() //wyswietlanie wrzuconyhc moment
+    {
+        StringBuilder text= new StringBuilder();
+        if(moneyThrowed.size()==0)
+            text.append("Nie wrzucono żadnych monet!!");
+        else
+        {   int number=1;
+            text.append("Wrzucono moonet: \n");
+            for (Coin coin : moneyThrowed) {
+                text.append(number).append(". ").append(coin.getName()).append("\n");
+                number++;
+            }
+        }
+        return text.toString();
+    };
+
+    double howMuchmoney()
+    {
         double cash=0;
         if(moneyThrowed.size()==0)
-            System.out.println("Nie wrzuciłes żadnej monety!!");
+            System.out.println("Nie wybrales zadnego biletu!!");
         else
         {
             for (Coin coin : moneyThrowed)
@@ -65,7 +59,4 @@ public class Coins extends Coin{
         return cash;
     }
 
-    //gettery
-    public LinkedList<Coin> getMoneyThrowed() { return moneyThrowed; }
-    public LinkedList<Coin> getCoins() { return coins; }
 }

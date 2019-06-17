@@ -1,5 +1,7 @@
 package com.kucuma.controller;
 
+import com.kucuma.coin.Coin;
+import com.kucuma.coin.Coins;
 import com.kucuma.ticket.Tickets;
 import com.kucuma.view.Window;
 import com.kucuma.controller.MoneyWindowController;
@@ -33,12 +35,15 @@ public class WindowController {
 
 
     private Tickets ticket = new Tickets();
+    private Coins coin=new Coins();
+
 
     public WindowController() {
         initComponents();
         initApearance();
         initListeners();
         window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
     }
 
     public void showWindowController() {
@@ -65,8 +70,8 @@ public class WindowController {
         billonMenu=window.getBillonMenu();
         finalprice=window.getFinalprice();
         windowPane=window.getWindowPane();
-        MoneyController = new MoneyWindowController();
         moneyThrown=window.getMoneyThrown();
+        MoneyController = new MoneyWindowController(moneyThrown, coin);
 
     }
     private void initApearance(){
@@ -184,10 +189,10 @@ public class WindowController {
         });
     }
 
-    private void updateStrings(){
+    public void updateStrings(){
         finalprice.setText("Do zaplaty: " + ticket.priceFinal() + "zl");
         // PO DODANIU KLASY COIN NALEZY UZUPELNIC O ZMIENNA PRZECHOWYWUJACA WRZUCONE PIENIADZE
-       // moneyThrown.setText("Wrzucono: "+ XXXXX + "zl");
+
         wyswietlacz.setText(ticket.bilety());
 
 }}
