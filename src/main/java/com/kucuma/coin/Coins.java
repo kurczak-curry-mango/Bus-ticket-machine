@@ -27,7 +27,7 @@ public class Coins extends Coin{
     }
     //dodwanie
     public void insertCoin(int inx) {
-        try {
+        try{
             if (amountOfCoins < 200) {
                 this.moneyThrowed.add(coins.get(inx));
                 if (coins.get(inx).getValue() < 5)
@@ -68,8 +68,6 @@ public class Coins extends Coin{
         }
         return cash;
     }
-
-
 
     //gettery
     public LinkedList<Coin> getMoneyThrowed() { return moneyThrowed; }
