@@ -31,7 +31,7 @@ public class Coins extends Coin{
         try{
         if(amountOfCoins<200) {
             this.moneyThrowed.add(coins.get(inx));
-            if(coins.get(inx).getValue() > 5)
+            if(coins.get(inx).getValue() < 5)
                 System.out.println("dodano monete " + coins.get(inx).getName());
             else
                 System.out.println("dodano banknot " + coins.get(inx).getName());
@@ -45,6 +45,7 @@ public class Coins extends Coin{
     //usuwanie monet
     public void removeCoins() {
         try {
+            System.out.println("Zwrócono \t" + howMuchmoney());
             this.moneyThrowed.clear();
             amountOfCoins=0;
         }catch (IndexOutOfBoundsException e)
