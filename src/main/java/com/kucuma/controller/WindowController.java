@@ -186,6 +186,14 @@ public class WindowController {
                 updateStrings();
             }
     });
+        returnMoney.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                coin.removeCoins();
+               // updateStrings();
+                moneyThrown.setText("Wrzucono: "+ coin.howMuchmoney() + "zl");
+            }
+        });
         billonMenu.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
