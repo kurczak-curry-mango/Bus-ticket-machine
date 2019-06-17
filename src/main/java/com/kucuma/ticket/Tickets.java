@@ -59,7 +59,7 @@ public class Tickets extends  Ticket{
     {
         StringBuilder name= new StringBuilder();
         if(blist.size()==0)
-            name.append("Nie wybrales zadnego biletu!!");
+            name.append("Automat biletowy MPK - WITAMY!\nWybierz bilet!");
         else
         {   int number=1;
             //String format = "%2d %1$-30s %3d";

@@ -102,7 +102,7 @@ public class WindowController {
         wyswietlacz.setSize(50, 50);
         wyswietlacz.setRows(10);
         wyswietlacz.setFont(new Font("Consolas", Font.PLAIN, 14));
-        wyswietlacz.setText("Wybierz bilet \n");
+        wyswietlacz.setText("Automat Biletowy MPK - WITAMY! \nWybierz bilet!");
         wyswietlacz.setLineWrap(true);
         wyswietlacz.setEditable(false);
         windowPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
