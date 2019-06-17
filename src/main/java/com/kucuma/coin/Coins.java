@@ -13,8 +13,8 @@ public class Coins extends Coin{
     public Coins(){ createCoinList(coins); }
 
     //tworzenie listy obietkow Coin
-    private void createCoinList(LinkedList obj){
-        obj.add(new Coin("0.05 groszy", 0.05));
+    private void createCoinList(LinkedList<Coin> obj){
+        //obj.add(new Coin("0.05 groszy", 0.05));
         obj.add(new Coin("10 groszy", 0.1));
         obj.add(new Coin("20 groszy", 0.2));
         obj.add(new Coin("50 groszy", 0.5));
@@ -28,6 +28,7 @@ public class Coins extends Coin{
     }
     //dodwanie
     public void insertCoin(int inx) {
+        try{
         if(amountOfCoins<200) {
             this.moneyThrowed.add(coins.get(inx));
             if(coins.get(inx).getValue() > 5)
@@ -37,6 +38,9 @@ public class Coins extends Coin{
             amountOfCoins++;
         }else
             System.out.println("Przekroczono już limit monet!!!");
+    }catch (IndexOutOfBoundsException e){
+            System.out.println("Bład w dodawaniu monet");
+        }
     }
     //usuwanie monet
     public void removeCoins() {

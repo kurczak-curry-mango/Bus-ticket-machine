@@ -30,8 +30,11 @@ public class Tickets extends  Ticket{
        //System.out.println("Podaj nr biletu który chcesz usunąć");
        //int nr = scan.nextInt();
        try {
+           if(blist.size()>0){
            blist.getLast().setTicketAmmount(1);
            this.blist.removeLast();
+           }
+           else System.out.println("nie ma biletu");
        }catch (IndexOutOfBoundsException e){
            System.out.println("Nie ma takiego indexu");
        }
@@ -62,15 +65,17 @@ public class Tickets extends  Ticket{
     {
         double price=0;
         if(blist.size()==0)
-            System.out.println("Nie wybrales zadnego biletu!!");
-        else
+        {System.out.println("Nie wybrales zadnego biletu!!");}
+        else{
+
+
         {
             for (Ticket ticket : blist)
             {
                 price += ticket.pricetopay*ticket.getTicketAmmount();
                 price=(double) Math.round(price*100)/100;
             }
-        }
+        }}
         return price;
     }
-}
+};
