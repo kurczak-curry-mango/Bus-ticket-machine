@@ -8,7 +8,7 @@ import java.net.URL;
 
 public class Window extends JFrame {
     private static final int WIDTH = 800;
-    private static final int HEIGHT = 600;
+    private static final int HEIGHT = 500;
     private JPanel mainPanel;
     private JButton returnMoney;
     private JButton bil4u;
