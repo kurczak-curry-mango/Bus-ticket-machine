@@ -30,7 +30,7 @@ public class Coins extends Coin{
     public void insertCoin(int inx) {
         if(amountOfCoins<200) {
             this.moneyThrowed.add(coins.get(inx));
-            if(coins.get(inx).getValue() > 5)
+            if(coins.get(inx).getValue() < 5)
                 System.out.println("dodano monete " + coins.get(inx).getName());
             else
                 System.out.println("dodano banknot " + coins.get(inx).getName());
@@ -64,6 +64,8 @@ public class Coins extends Coin{
         }
         return cash;
     }
+
+
 
     //gettery
     public LinkedList<Coin> getMoneyThrowed() { return moneyThrowed; }
