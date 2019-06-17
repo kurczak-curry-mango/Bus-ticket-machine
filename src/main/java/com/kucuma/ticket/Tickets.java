@@ -65,15 +65,17 @@ public class Tickets extends  Ticket{
     {
         double price=0;
         if(blist.size()==0)
-            //System.out.println("Nie wybrales zadnego biletu!!");
-        else
+        {System.out.println("Nie wybrales zadnego biletu!!");}
+        else{
+
+
         {
             for (Ticket ticket : blist)
             {
                 price += ticket.pricetopay*ticket.getTicketAmmount();
                 price=(double) Math.round(price*100)/100;
             }
-        }
+        }}
         return price;
     }
-}
+};
