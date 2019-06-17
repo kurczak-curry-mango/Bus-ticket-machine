@@ -68,7 +68,7 @@ public class Coins extends Coin{
         }
         return cash;
     }
-
+    
     //gettery
     public LinkedList<Coin> getMoneyThrowed() { return moneyThrowed; }
     public LinkedList<Coin> getCoins() { return coins; }
