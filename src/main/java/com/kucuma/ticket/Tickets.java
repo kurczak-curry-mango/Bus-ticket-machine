@@ -43,7 +43,7 @@ public class Tickets extends  Ticket{
                }
                else if(ticket.getType().equals(ticketsInCart.getLast())&&ticket.getTicketAmmount()==1){
                    blist.remove(ticket);
-                   ticketsInCart.removeLast();
+                       ticketsInCart.removeLast();
                    break;
                }
            }

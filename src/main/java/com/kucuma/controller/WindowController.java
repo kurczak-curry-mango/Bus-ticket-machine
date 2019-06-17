@@ -1,18 +1,12 @@
 package com.kucuma.controller;
-
-import com.kucuma.coin.Coin;
 import com.kucuma.coin.Coins;
 import com.kucuma.ticket.Tickets;
 import com.kucuma.view.Window;
-import com.kucuma.controller.MoneyWindowController;
-import javax.imageio.ImageIO;
-import java.io.File;
-import java.io.IOException;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.net.URL;
+
 
 public class WindowController {
     private Window window;

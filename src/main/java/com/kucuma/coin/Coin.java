@@ -6,13 +6,22 @@ package com.kucuma.coin;
  public class Coin {
     private double value; // wartosc
     private String name; //nazwa
+     private int coinAmount;
     Coin(){ }
-    Coin(String name, double value ){ this.name=name;this.value=value; }
+    Coin(String name, double value, int coinAmount ){
+        this.name=name;
+        this.value=value;
+        this.coinAmount=coinAmount;
+    }
  //Gettes
     protected String getName() { return name; }
     protected double getValue() { return value; }
-//setter
-    public void setName(String name) { this.name = name; }
-    public void setValue(double value) { this.value = value; }
+    public int getCoinAmount() { return coinAmount; }
 
-}
+//setter
+     void setName(String name) { this.name = name; }
+     void setValue(double value) { this.value = value; }
+     void setCoinAmount() { this.coinAmount+=1; }
+     void setCoinAmountM() { this.coinAmount-=1; }
+     void setCoinAmountI(int i) { this.coinAmount=i; }
+ }
