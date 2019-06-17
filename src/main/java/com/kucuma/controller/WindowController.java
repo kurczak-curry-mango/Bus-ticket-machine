@@ -82,7 +82,7 @@ public class WindowController {
     private void initApearance(){
         finalprice.setText("Do zaplaty: 0zl");
         finalprice.setFont(new Font("Roboto", Font.PLAIN, 20));
-        moneyThrown.setText("Wrzucono: 0zl");
+        moneyThrown.setText("Wrzucono: 0.00zl");
         moneyThrown.setFont(new Font("Roboto", Font.PLAIN, 20));
         bil1n.setText("<html> <p style=\"text-align:center;\">Bilet 20min normalny<br>2,80zł</p></html>");
         bil2n.setText("<html> <p style=\"text-align:center;\">Bilet 40min normalny<br>3,80zł</p></html>");
