@@ -14,7 +14,7 @@ public class Coins extends Coin{
 
     //tworzenie listy obietkow Coin
     private void createCoinList(LinkedList obj){
-        obj.add(new Coin("0.05 groszy", 0.05));
+
         obj.add(new Coin("10 groszy", 0.1));
         obj.add(new Coin("20 groszy", 0.2));
         obj.add(new Coin("50 groszy", 0.5));
@@ -24,13 +24,13 @@ public class Coins extends Coin{
         obj.add(new Coin( "10 złoty",10 ));
         obj.add(new Coin( "20 złoty",20 ));
         obj.add(new Coin( "50 złoty",50 ));
-        obj.add(new Coin( "100 złoty",50 ));
+        obj.add(new Coin( "100 złoty",100 ));
     }
     //dodwanie
     public void insertCoin(int inx) {
         if(amountOfCoins<200) {
             this.moneyThrowed.add(coins.get(inx));
-            if(coins.get(inx).getValue() > 5)
+            if(coins.get(inx).getValue() < 5)
                 System.out.println("dodano monete " + coins.get(inx).getName());
             else
                 System.out.println("dodano banknot " + coins.get(inx).getName());

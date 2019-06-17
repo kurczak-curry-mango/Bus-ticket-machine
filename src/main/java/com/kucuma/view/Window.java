@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URL;
 
 public class Window extends JFrame {
     private static final int WIDTH = 800;
@@ -32,7 +33,6 @@ public class Window extends JFrame {
         setSize(WIDTH, HEIGHT);
         setContentPane(mainPanel);
         setLocationRelativeTo(null);
-
 
     }
 

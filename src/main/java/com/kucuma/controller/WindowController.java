@@ -5,11 +5,14 @@ import com.kucuma.coin.Coins;
 import com.kucuma.ticket.Tickets;
 import com.kucuma.view.Window;
 import com.kucuma.controller.MoneyWindowController;
-
+import javax.imageio.ImageIO;
+import java.io.File;
+import java.io.IOException;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URL;
 
 public class WindowController {
     private Window window;
@@ -36,6 +39,7 @@ public class WindowController {
 
     private Tickets ticket = new Tickets();
     private Coins coin=new Coins();
+    ImageIcon img = new ImageIcon("src/main/java/com/kucuma/images/ikona.png");
 
 
     public WindowController() {
@@ -43,7 +47,6 @@ public class WindowController {
         initApearance();
         initListeners();
         window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-
     }
 
     public void showWindowController() {
@@ -53,6 +56,8 @@ public class WindowController {
 
     private void initComponents() {
         window = new Window();
+        window.setIconImage(img.getImage());
+        window.setTitle("Automat biletowy MPK");
         returnMoney=window.getReturnMoney();
         bil4u=window.getBil4u();
         bil4n=window.getBil4n();
