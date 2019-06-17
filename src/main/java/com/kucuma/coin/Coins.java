@@ -9,10 +9,10 @@ public class Coins extends Coin{
     private LinkedList<Coin> coins=new LinkedList<>(); //rodzaje
     private LinkedList<Coin> moneyThrowed =new LinkedList<>(); // wrzucone
 
-//konstruktor
+    //konstruktor
     public Coins(){ createCoinList(coins); }
 
-//tworzenie listy obietkow Coin
+    //tworzenie listy obietkow Coin
     private void createCoinList(LinkedList obj){
         obj.add(new Coin("0.05 groszy", 0.05));
         obj.add(new Coin("10 groszy", 0.1));
@@ -40,13 +40,13 @@ public class Coins extends Coin{
     }
     //usuwanie monet
     public void removeCoins() {
-            try {
-               this.moneyThrowed.clear();
-                amountOfCoins=0;
-            }catch (IndexOutOfBoundsException e)
-            {
-                System.out.println("Nie ma juz monet");
-            }
+        try {
+            this.moneyThrowed.clear();
+            amountOfCoins=0;
+        }catch (IndexOutOfBoundsException e)
+        {
+            System.out.println("Nie ma juz monet");
+        }
     }
 
     //Kwota Wrzucona do automatu
