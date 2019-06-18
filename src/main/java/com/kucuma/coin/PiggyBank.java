@@ -13,8 +13,8 @@ public class PiggyBank{
     protected void createRestList(LinkedList<Coin> obj){
 
         obj.add(new Coin("10 groszy", 0.1,200));
-        obj.add(new Coin("20 groszy", 0.2,2));
-        obj.add(new Coin("50 groszy", 0.5,0));
+        obj.add(new Coin("20 groszy", 0.2,200));
+        obj.add(new Coin("50 groszy", 0.5,100));
         obj.add(new Coin( "1 złoty",1,100 ));
         obj.add(new Coin( "2 złoty",2,50 ));
         obj.add(new Coin( "5 złoty",5,10 ));
