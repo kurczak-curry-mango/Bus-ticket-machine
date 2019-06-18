@@ -1,7 +1,7 @@
 package com.kucuma.controller;
 
 import com.kucuma.view.MoneyWindow;
-
+import com.kucuma.StringHandler;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,6 +24,7 @@ public class MoneyWindowController  {
     private JButton payByCard;
     private JLabel moneyThrown;
     private Coins coin;
+
     public void showWindowController() {
         MoneyWind.setResizable(false);
         MoneyWind.setVisible(true);

@@ -1,15 +1,21 @@
 package com.kucuma.controller;
+
+import com.kucuma.coin.Coin;
 import com.kucuma.coin.Coins;
+import com.kucuma.coin.PiggyBank;
 import com.kucuma.ticket.Tickets;
 import com.kucuma.view.Window;
+import com.kucuma.controller.MoneyWindowController;
+import javax.imageio.ImageIO;
+import java.io.File;
+import java.io.IOException;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import com.kucuma.coin.PiggyBank;
+import java.net.URL;
 
-
-    public class WindowController {
+public class WindowController {
     private Window window;
     private JButton returnMoney;
     private JButton bil4u;
@@ -31,11 +37,10 @@ import com.kucuma.coin.PiggyBank;
     private MoneyWindowController MoneyController;
     private JLabel moneyThrown;
 
-     Tickets ticket = new Tickets();
-     Coins coin=new Coins();
 
-    PiggyBank piggy = new PiggyBank();
-
+    private Tickets ticket = new Tickets();
+    private Coins coin=new Coins();
+    private PiggyBank piggy= new PiggyBank();
     ImageIcon img = new ImageIcon("src/main/java/com/kucuma/images/ikona.png");
 
 
@@ -209,13 +214,13 @@ import com.kucuma.coin.PiggyBank;
                 updateStrings();
             }
         });
+
         billonMenu.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 MoneyController.showWindowController();
             }
         });
-
     }
 
     public void updateStrings(){
