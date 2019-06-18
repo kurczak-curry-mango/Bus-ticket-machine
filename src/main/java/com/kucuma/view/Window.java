@@ -28,6 +28,26 @@ public class Window extends JFrame {
     public JLabel finalprice;
     private JScrollPane windowPane;
     private JLabel moneyThrown;
+    private JPanel languagePanel;
+    private JButton langPL;
+    private JButton langDE;
+    private JButton langENG;
+
+    public JPanel getLanguagePanel() {
+        return languagePanel;
+    }
+
+    public JButton getLangPL() {
+        return langPL;
+    }
+
+    public JButton getLangDE() {
+        return langDE;
+    }
+
+    public JButton getLangENG() {
+        return langENG;
+    }
 
     public Window() {
         setSize(WIDTH, HEIGHT);

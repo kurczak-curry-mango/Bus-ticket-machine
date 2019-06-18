@@ -13,7 +13,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.lang.reflect.Array;
 import java.net.URL;
+import java.util.ArrayList;
 
 public class WindowController {
     private Window window;
@@ -36,11 +38,17 @@ public class WindowController {
     private JScrollPane windowPane;
     private MoneyWindowController MoneyController;
     private JLabel moneyThrown;
+    private JPanel languagePanel;
+    private JButton langPL;
+    private JButton langDE;
+    private JButton langENG;
 
-    public StringHandler stringHandler= new StringHandler();
+    private StringHandler stringHandler = new StringHandler();
     private Tickets ticket = new Tickets();
     private Coins coin=new Coins();
     ImageIcon img = new ImageIcon("src/main/java/com/kucuma/images/ikona.png");
+    ArrayList<String> language= new ArrayList<>();
+
 
 
     public WindowController() {
@@ -60,6 +68,7 @@ public class WindowController {
         window.setIconImage(img.getImage());
         window.setTitle("Automat biletowy MPK");
         returnMoney=window.getReturnMoney();
+        language=stringHandler.getEnglish();
         bil4u=window.getBil4u();
         bil4n=window.getBil4n();
         bil3n=window.getBil3n();
@@ -78,6 +87,10 @@ public class WindowController {
         windowPane=window.getWindowPane();
         moneyThrown=window.getMoneyThrown();
         MoneyController = new MoneyWindowController(moneyThrown, coin);
+        languagePanel=window.getLanguagePanel();
+        langPL=window.getLangPL();
+        langENG=window.getLangENG();
+        langDE=window.getLangDE();
 
     }
     private void initApearance(){
@@ -85,19 +98,34 @@ public class WindowController {
         finalprice.setFont(new Font("Roboto", Font.PLAIN, 20));
         moneyThrown.setText("Wrzucono: 0.00zl");
         moneyThrown.setFont(new Font("Roboto", Font.PLAIN, 20));
-        bil1n.setText("testuj tu");
-        bil2n.setText("<html> <p style=\"text-align:center;\">Bilet 40min normalny<br>3,80zł</p></html>");
-        bil3n.setText("<html> <p style=\"text-align:center;\">Bilet 60min normalny<br>6,00zł</p></html>");
-        bil4n.setText("<html> <p style=\"text-align:center;\">Bilet 24h normalny<br>15,00zł</p></html>");
-        bil5n.setText("<html> <p style=\"text-align:center;\">Bilet 48h normalny<br>24,00zł</p></html>");
-        bil1u.setText("<html> <p style=\"text-align:center;\">Bilet 20min ulgowy<br>1,40zł</p></html>");
-        bil2u.setText("<html> <p style=\"text-align:center;\">Bilet 40min ulgowy<br>1,90zł</p></html>");
-        bil3u.setText("<html> <p style=\"text-align:center;\">Bilet 60min ulgowy<br>3,00zł</p></html>");
-        bil4u.setText("<html> <p style=\"text-align:center;\">Bilet 24h ulgowy<br>7,50zł</p></html>");
-        bil5u.setText("<html> <p style=\"text-align:center;\">Bilet 48h ulgowy<br>12,00zł</p></html>");
-        returnTicket.setText("<html> <p style=\"text-align:center;\">ZWRÓĆ BILET</p></html>");
-        returnMoney.setText("<html> <p style=\"text-align:center;\">ZWRÓĆ PIENIĄDZE</p></html>");
-        buyTicket.setText("<html> <p style=\"text-align:center;\">KUP BILETY</p></html>");
+        bil1n.setText(language.get(0));
+        bil2n.setText(language.get(1));
+        bil3n.setText(language.get(2));
+        bil4n.setText(language.get(3));
+        bil5n.setText(language.get(4));
+        bil1u.setText(language.get(5));
+        bil2u.setText(language.get(6));
+        bil3u.setText(language.get(7));
+        bil4u.setText(language.get(8));
+        bil5u.setText(language.get(9));
+        returnTicket.setText(language.get(10));
+        returnMoney.setText(language.get(11));
+        buyTicket.setText(language.get(12));
+        langPL.setOpaque(false);
+        langPL.setContentAreaFilled(false);
+        langPL.setBorderPainted(false);
+        langENG.setOpaque(false);
+        langENG.setContentAreaFilled(false);
+        langENG.setBorderPainted(false);
+        langDE.setOpaque(false);
+        langDE.setContentAreaFilled(false);
+        langDE.setBorderPainted(false);
+        billonMenu.setOpaque(false);
+        billonMenu.setContentAreaFilled(false);
+        billonMenu.setBorderPainted(false);
+        langPL.setIcon(new ImageIcon("src/main/java/com/kucuma/images/langPL.png"));
+        langENG.setIcon(new ImageIcon("src/main/java/com/kucuma/images/langENG.png"));
+        langDE.setIcon(new ImageIcon("src/main/java/com/kucuma/images/langDE.png"));
         billonMenu.setIcon(new ImageIcon("src/main/java/com/kucuma/images/wallet.png"));
         //setText("<html> <p style=\\\"text-align:center;\\\">OKNO!!</p></html>");
         wyswietlacz.setSize(50, 50);
@@ -204,6 +232,28 @@ public class WindowController {
             @Override
             public void actionPerformed(ActionEvent e) {
                 MoneyController.showWindowController();
+            }
+        });
+        langPL.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            language=stringHandler.getPolish();
+            initApearance();
+            }
+        });
+        langENG.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            language=stringHandler.getEnglish();
+                initApearance();
+            }
+        });
+        langDE.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                language=stringHandler.getGerman();
+                initApearance();
             }
         });
     }
