@@ -6,9 +6,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import com.kucuma.coin.PiggyBank;
 
 
-public class WindowController {
+    public class WindowController {
     private Window window;
     private JButton returnMoney;
     private JButton bil4u;
@@ -30,9 +31,11 @@ public class WindowController {
     private MoneyWindowController MoneyController;
     private JLabel moneyThrown;
 
+     Tickets ticket = new Tickets();
+     Coins coin=new Coins();
 
-    private Tickets ticket = new Tickets();
-    private Coins coin=new Coins();
+    PiggyBank piggy = new PiggyBank();
+
     ImageIcon img = new ImageIcon("src/main/java/com/kucuma/images/ikona.png");
 
 
@@ -193,12 +196,26 @@ public class WindowController {
                 moneyThrown.setText("Wrzucono: " + coin.howMuchmoney() + "zl");
             }
         });
+        buyTicket.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                piggy.ileKurwawSkarbonce();
+                coin.amountArray();
+                piggy.buy(coin.howMuchmoney(),ticket.priceFinal(),coin.getTab());
+                coin.removeCoins();
+                ticket.removeTickets();
+                moneyThrown.setText("Wrzucono: " + coin.howMuchmoney() + "zl");
+                piggy.ileKurwawSkarbonce();
+                updateStrings();
+            }
+        });
         billonMenu.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 MoneyController.showWindowController();
             }
         });
+
     }
 
     public void updateStrings(){

@@ -8,12 +8,12 @@ public class Coins extends Coin{
     private static int amountOfCoins=0; //licza monet wrzucanych limit
     private LinkedList<Coin> coins=new LinkedList<>(); //rodzaje
     private LinkedList<Coin> moneyThrowed =new LinkedList<>(); // wrzucone
-
+    private int [] tab = new int[9]; //tablica z wrzuconymi monetami
     //konstruktor
     public Coins(){ createCoinList(coins); }
 
     //tworzenie listy obietkow Coin
-    private void createCoinList(LinkedList<Coin> obj){
+    protected void createCoinList(LinkedList<Coin> obj){
         //obj.add(new Coin("0.05 groszy", 0.05));
         obj.add(new Coin("10 groszy", 0.1,0));
         obj.add(new Coin("20 groszy", 0.2,0));
@@ -75,9 +75,21 @@ public class Coins extends Coin{
         return cash;
     }
 
+    //ilosc poszczególnych monet wrzuconych
+    public void amountArray()
+    {
 
+        for(int i = 0;i<coins.size()-1;i++)
+        {
+            tab[i]=coins.get(i).getCoinAmount();
+        }
+
+    }
 
     //gettery
     public LinkedList<Coin> getMoneyThrowed() { return moneyThrowed; }
     public LinkedList<Coin> getCoins() { return coins; }
+    public int[] getTab() { return tab; }
+
+    public void setTab(int[] tab) { this.tab = tab; }
 }

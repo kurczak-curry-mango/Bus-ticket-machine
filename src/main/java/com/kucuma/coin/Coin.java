@@ -22,6 +22,7 @@ package com.kucuma.coin;
      void setName(String name) { this.name = name; }
      void setValue(double value) { this.value = value; }
      void setCoinAmount() { this.coinAmount+=1; }
-     void setCoinAmountM() { this.coinAmount-=1; }
-     void setCoinAmountI(int i) { this.coinAmount=i; }
+     void setCoinAmountM(int i) { this.coinAmount-=1; }
+     void setCoinAmountMi(int i) { this.coinAmount-=i; }
+     void setCoinAmountI(int i) { this.coinAmount+=i; }
  }
