@@ -24,7 +24,7 @@ public class PiggyBank{
         obj.add(new Coin( "100 złoty",100,0 ));
     }
 
-     public void ileKurwawSkarbonce()
+     public void howMuchInPiggy()
     {
         for(Coin piggy : piggy)
             System.out.println(piggy.getCoinAmount());
@@ -73,16 +73,18 @@ public class PiggyBank{
         { System.out.println("REST ERROR!!! Wyszedles poza granice!!");}
     }
 
-    public void buy(double money,double price,int []tab )
+   public boolean buy(double money,double price,int []tab )
     {
         if(money>=price)
         {
             rest(countRest(money,price));
             addingToPiggy(tab);
+            return true;
         }
-        else
-            System.out.println("DAWAJ HAJS ROBAKU!");
-
+        else{
+            System.out.println("Wrzuc wiecej pieniedz");
+            return false;
+        }
     }
 
 }

@@ -27,6 +27,16 @@ public class Tickets extends  Ticket{
 
         };
 
+   public void removeAllTickets(){
+       try {
+           if(blist.size()>0){
+              blist.clear();
+           }
+           else System.out.println("nie ma biletu");
+       }catch (IndexOutOfBoundsException e){
+           System.out.println("Nie ma takiego indexu");
+       }
+   }
    public void removeTickets()
    {
        //Scanner scan = new Scanner(System.in);

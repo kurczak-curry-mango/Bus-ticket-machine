@@ -28,6 +28,8 @@ public class Coins extends Coin{
     }
     //dodwanie
     public void insertCoin(int inx) {
+        if(inx<0 || inx >coins.size()-1)
+            throw new IndexOutOfBoundsException("Bad range!!");
         try{
         if(amountOfCoins<200) {
             this.moneyThrowed.add(coins.get(inx));

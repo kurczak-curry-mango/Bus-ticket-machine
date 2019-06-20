@@ -1,20 +1,15 @@
 package com.kucuma.controller;
 
 import com.kucuma.StringHandler;
-import com.kucuma.coin.Coin;
 import com.kucuma.coin.Coins;
 import com.kucuma.coin.PiggyBank;
 import com.kucuma.ticket.Tickets;
 import com.kucuma.view.Window;
-import com.kucuma.controller.MoneyWindowController;
-import javax.imageio.ImageIO;
-import java.io.File;
-import java.io.IOException;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.net.URL;
 import java.util.ArrayList;
 
 public class WindowController {
@@ -233,13 +228,12 @@ public class WindowController {
         buyTicket.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                piggy.ileKurwawSkarbonce();
-                coin.amountArray();
-                piggy.buy(coin.howMuchmoney(),ticket.priceFinal(),coin.getTab());
+
+                if(piggy.buy(coin.howMuchmoney(),ticket.priceFinal(),coin.getTab())){
                 coin.removeCoins();
-                ticket.removeTickets();
+                ticket.removeAllTickets();
+                }
                 moneyThrown.setText("Wrzucono: " + coin.howMuchmoney() + "zl");
-                piggy.ileKurwawSkarbonce();
                 updateStrings();
             }
         });
