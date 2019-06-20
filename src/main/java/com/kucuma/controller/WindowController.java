@@ -33,7 +33,7 @@ public class WindowController {
     private JScrollPane windowPane;
     private MoneyWindowController MoneyController;
     private JLabel moneyThrown;
-
+    private JTextField consoleScreen;
     private JPanel languagePanel;
     private JButton langPL;
     private JButton langDE;
@@ -64,6 +64,7 @@ public class WindowController {
         window = new Window();
         window.setIconImage(img.getImage());
         window.setTitle("Automat biletowy MPK");
+        window.getContentPane().setBackground(new Color(192,198,198));
         returnMoney=window.getReturnMoney();
         bil4u=window.getBil4u();
         bil4n=window.getBil4n();
@@ -78,6 +79,7 @@ public class WindowController {
         bil1u=window.getBil1u();
         returnTicket=window.getReturnTicket();
         wyswietlacz=window.getWyswietlacz();
+        consoleScreen=window.getConsoleScreen();
         billonMenu=window.getBillonMenu();
         finalprice=window.getFinalprice();
         windowPane=window.getWindowPane();
@@ -123,6 +125,7 @@ public class WindowController {
         billonMenu.setOpaque(false);
         billonMenu.setContentAreaFilled(false);
         billonMenu.setBorderPainted(false);
+        languagePanel.setOpaque(false);
         langPL.setIcon(new ImageIcon("src/main/java/com/kucuma/images/langPL.png"));
         langENG.setIcon(new ImageIcon("src/main/java/com/kucuma/images/langENG.png"));
         langDE.setIcon(new ImageIcon("src/main/java/com/kucuma/images/langDE.png"));
