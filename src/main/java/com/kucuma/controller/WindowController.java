@@ -85,6 +85,7 @@ public class WindowController {
         MoneyController = new MoneyWindowController(moneyThrown, coin);
         language=stringHandler.getPolish();
         ticket.language=stringHandler.getPolish();
+        MoneyController.language=stringHandler.getPolish();
         languagePanel=window.getLanguagePanel();
         langPL=window.getLangPL();
         langENG=window.getLangENG();
