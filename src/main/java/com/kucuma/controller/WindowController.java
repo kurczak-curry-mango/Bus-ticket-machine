@@ -240,7 +240,7 @@ public class WindowController {
                     coin.removeCoins();
                     ticket.removeTickets();
                 }
-                moneyThrown.setText("Wrzucono: " + coin.howMuchmoney() + "zl");
+                moneyThrown.setText(language.get(15) + coin.howMuchmoney() + "zl");
                 updateStrings();
             }
         });
@@ -286,7 +286,7 @@ public class WindowController {
         ticket.language=stringHandler.getEnglish();
         ticket.changeticketlangENG();
         //ticket.createTicketTable();
-
+        MoneyController.language=stringHandler.getEnglish();
         initApearance();
         updateStrings();
         wyswietlacz.setText(ticket.bilety());
@@ -295,18 +295,22 @@ public class WindowController {
         language=stringHandler.getPolish();
         ticket.language=stringHandler.getPolish();
         ticket.changeticketlangPL();
+        MoneyController.language=stringHandler.getPolish();
         //ticket.createTicketTable();
-        updateStrings();
+
         initApearance();
+        updateStrings();
         wyswietlacz.setText(ticket.bilety());
     }
     public void changeLangDE(){
         language=stringHandler.getGerman();
         ticket.language=stringHandler.getGerman();
         ticket.changeticketlangDE();
+        MoneyController.language=stringHandler.getGerman();
         //ticket.createTicketTable();
-        updateStrings();
         initApearance();
+        updateStrings();
+
         wyswietlacz.setText(ticket.bilety());
     }
 }

@@ -1,13 +1,17 @@
 package com.kucuma.coin;
 
 
+import com.kucuma.StringHandler;
 
+import java.util.ArrayList;
 
- public class Coin {
+public class Coin {
     private double value; // wartosc
     private String name; //nazwa
      private int coinAmount;
-    Coin(){ }
+     private StringHandler stringHandler = new StringHandler();
+     public ArrayList<String> language= new ArrayList<>();
+    Coin(){ language=stringHandler.getPolish();}
     Coin(String name, double value, int coinAmount ){
         this.name=name;
         this.value=value;

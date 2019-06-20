@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import com.kucuma.coin.Coins;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class MoneyWindowController  {
     private MoneyWindow MoneyWind;
@@ -24,6 +25,8 @@ public class MoneyWindowController  {
     private JButton payByCard;
     private JLabel moneyThrown;
     private Coins coin;
+    private StringHandler stringHandler = new StringHandler();
+    public ArrayList<String> language= new ArrayList<>();
 
     public void showWindowController() {
         MoneyWind.setResizable(false);
@@ -59,7 +62,7 @@ public class MoneyWindowController  {
 
     }
     private void updateSTR(){
-        moneyThrown.setText("Wrzucono: "+ coin.howMuchmoney() + "zl");
+        moneyThrown.setText(language.get(15)+ coin.howMuchmoney() + "zl");
     }
     private void initApearande(){
         throw10gr.setIcon(new ImageIcon("src/main/java/com/kucuma/images/4.png"));
