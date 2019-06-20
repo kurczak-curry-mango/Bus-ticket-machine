@@ -32,6 +32,7 @@ public class Window extends JFrame {
     private JButton langPL;
     private JButton langDE;
     private JButton langENG;
+    private JTextField console;
 
     public JPanel getLanguagePanel() {
         return languagePanel;

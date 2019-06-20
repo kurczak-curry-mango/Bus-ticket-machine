@@ -97,7 +97,7 @@ public class Tickets extends  Ticket{
         else
         {   int number=1;
             //String format = "%2d %1$-30s %3d";
-            String line=String.format("%3s %15s %15s\n", "Nr.", "Typ biletu", "ilosc") ;
+            String line=String.format("%4s %6s %15s\n", language.get(29), language.get(30), language.get(31)) ;
             name.append(line);
             for (Ticket ticket : blist) {
                 line= String.format("%2d. %-22s %-4d", number, ticket.type, ticket.TicketAmmount );
