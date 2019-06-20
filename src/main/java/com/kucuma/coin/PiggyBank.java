@@ -75,12 +75,13 @@ public class PiggyBank{
 
   public  boolean buy(double money,double price,int []tab )
     {
-        if(money>=price)
+        if(money>=price && money!=0)
         {
             rest(countRest(money,price));
             addingToPiggy(tab);
             return true;
         }
+
         else{
             System.out.println("Wrzuc wiecej pieniedz");
             return false;

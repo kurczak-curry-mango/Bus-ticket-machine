@@ -41,11 +41,14 @@ public class StringHandler {
         polish.add(" Bilet ulgowy 24 h       ");
         polish.add(" Bilet normalny 48 h     ");
         polish.add(" Bilet ulgowy 48 h       ");
-
         polish.add("Nr.");//29
         polish.add("Typ biletu");//30
         polish.add("            ilosc");//31
-
+        polish.add("Nie mozesz wykonac tej operacji!");
+        polish.add("Dziekujemy za zakupy!");//33
+        polish.add("Bilety zostana wydrukowane.");//34
+        polish.add("Zostanie wydana reszta: ");//35
+        polish.add("Życzymy miłego dnia!");
 
         english.add("<html> <p style=font-size:8px;\"text-align:center;\">Regular ticket 20min<br>2,80zł</p></html>");//0
         english.add("<html> <p style=font-size:8px;\"text-align:center;\">Regular ticket 40min <br>3,80zł</p></html>");
@@ -76,10 +79,14 @@ public class StringHandler {
         english.add(" Half-price ticket 24h   ");
         english.add(" Regular ticket 48h      ");
         english.add(" Half-price ticket 48h   ");
-
         english.add("No.");//29
         english.add("Ticket type");//30
         english.add("QTY");//31
+        english.add("You can't perform this operation!");
+        english.add("Thank you for order!");//33
+        english.add("Tickets will be printed");//34
+        english.add("Change will be given: ");//35
+        english.add("Have a nice day!");
 
         german.add("<html> <p style=font-size:8px;\"text-align:center;\">Normales Ticket 20min <br>2,80zł</p></html>");//0
         german.add("<html> <p style=font-size:8px;\"text-align:center;\">Normales Ticket 40min <br>3,80zł</p></html>");
@@ -113,7 +120,11 @@ public class StringHandler {
         german.add("Nr.");//29
         german.add("Ticket-typ");//30
         german.add("            Anzahl");//31
-
+        german.add("Sie können diesen Vorgang nicht aus-\nführen!");
+        german.add("Vielen Dank für die Bestellung!");//33
+        german.add("Tickets werden gedruckt!");//34
+        german.add("Der Rest wird freigegeben: ");//35
+        german.add("Wir laden Sie wieder ein!");
     }
 
     public ArrayList getPolish(){

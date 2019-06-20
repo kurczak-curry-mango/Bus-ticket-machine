@@ -234,14 +234,8 @@ public class WindowController {
         buyTicket.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+            buyTicketOperation();
 
-                if(piggy.buy(coin.howMuchmoney(),ticket.priceFinal(),coin.getTab())){
-                    coin.removeCoins();
-                    ticket.removeAllTickets();
-
-                }
-                moneyThrown.setText(language.get(15) + coin.howMuchmoney() + "zl");
-                updateStrings();
             }
         });
 
@@ -312,5 +306,38 @@ public class WindowController {
         updateStrings();
         wyswietlacz.setText(ticket.ticketString());
     }
+
+    public void buyTicketOperation(){
+            if(piggy.buy(coin.howMuchmoney(),ticket.priceFinal(),coin.getTab())){
+                coin.removeCoins();
+                ticket.removeAllTickets();
+                moneyThrown.setText(language.get(15) + coin.howMuchmoney() + "zl");
+                wyswietlacz.setText(language.get(33)+"\n");
+                wyswietlacz.append(language.get(34)+"\n");
+                wyswietlacz.append(language.get(35)+"zl\n");
+                wyswietlacz.append(language.get(36));
+                Timer timer = new Timer(7000, new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent arg0) {
+                        updateStrings();
+                    }
+                });
+                timer.setRepeats(false); // Only execute once
+                timer.start();
+
+            }
+            else{
+                Timer timerFail=new Timer(2000, new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        updateStrings();
+                    }
+
+                });
+                wyswietlacz.append("\n\n"+language.get(32));
+                timerFail.setRepeats(false); // Only execute once
+                timerFail.start();
+            }
+        }
 }
 
