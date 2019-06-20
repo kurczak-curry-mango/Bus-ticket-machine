@@ -231,7 +231,7 @@ public class WindowController {
 
                 if(piggy.buy(coin.howMuchmoney(),ticket.priceFinal(),coin.getTab())){
                 coin.removeCoins();
-                ticket.removeAllTickets();
+                ticket.removeTickets();
                 }
                 moneyThrown.setText("Wrzucono: " + coin.howMuchmoney() + "zl");
                 updateStrings();

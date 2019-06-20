@@ -74,6 +74,39 @@ public class MoneyWindowController  {
         throw100zl.setIcon(new ImageIcon("src/main/java/com/kucuma/images/100.png"));
         payByCard.setIcon(new ImageIcon("src/main/java/com/kucuma/images/card.png"));
         payByCard.setText("<html> <p style=\"text-align:center;\">Zaplac karta poprzez zblizenie</p></html>");
+        throw10gr.setOpaque(false);
+        throw10gr.setContentAreaFilled(false);
+        throw10gr.setBorderPainted(false);
+        throw20gr.setOpaque(false);
+        throw20gr.setContentAreaFilled(false);
+        throw20gr.setBorderPainted(false);
+        throw50gr.setOpaque(false);
+        throw50gr.setContentAreaFilled(false);
+        throw50gr.setBorderPainted(false);
+        throw1zl.setOpaque(false);
+        throw1zl.setContentAreaFilled(false);
+        throw1zl.setBorderPainted(false);
+        throw2zl.setOpaque(false);
+        throw2zl.setContentAreaFilled(false);
+        throw2zl.setBorderPainted(false);
+        throw5zl.setOpaque(false);
+        throw5zl.setContentAreaFilled(false);
+        throw5zl.setBorderPainted(false);
+        throw10zl.setOpaque(false);
+        throw10zl.setContentAreaFilled(false);
+        throw10zl.setBorderPainted(false);
+        throw20zl.setOpaque(false);
+        throw20zl.setContentAreaFilled(false);
+        throw20zl.setBorderPainted(false);
+        throw50zl.setOpaque(false);
+        throw50zl.setContentAreaFilled(false);
+        throw50zl.setBorderPainted(false);
+        throw100zl.setOpaque(false);
+        throw100zl.setContentAreaFilled(false);
+        throw100zl.setBorderPainted(false);
+        payByCard.setOpaque(false);
+        payByCard.setContentAreaFilled(false);
+        payByCard.setBorderPainted(false);
     }
     private void initListeners(){
             throw10gr.addActionListener(new ActionListener() {

@@ -25,12 +25,22 @@ public class StringHandler {
         polish.add("<html> <p style=\"text-align:center;\">ZWRÓĆ BILET</p></html>");
         polish.add("<html> <p style=\"text-align:center;\">ZWRÓĆ PIENIĄDZE</p></html>");
         polish.add("<html> <p style=\"text-align:center;\">KUP BILETY</p></html>");
-        polish.add("Automat Biletowy MPK - WITAMY! \nWybierz bilet!");
+        polish.add("Automat Biletowy MPK - WITAMY! \nWybierz bilet!");//13
         polish.add("\nZwrócono \t"); //14
-        polish.add("Wrzucono: ");
-        polish.add("Do zaplaty: ");
-        polish.add("<html> <p style=\"text-align:center;\">Zaplac karta poprzez zblizenie</p></html>");
+        polish.add("Wrzucono: ");//15
+        polish.add("Do zaplaty: ");//16
+        polish.add("<html> <p style=\"text-align:center;\">Zaplac karta poprzez zblizenie</p></html>");//17
         polish.add("Wyjście");//18
+        polish.add(" Bilet normalny 20 min");//19
+        polish.add(" Bilet ulgowy 20 min");
+        polish.add(" Bilet normalny 40 min");
+        polish.add(" Bilet ulgowy 40 min");
+        polish.add(" Bilet normalny 60 min");
+        polish.add(" Bilet ulgowy 60 min");
+        polish.add(" Bilet normalny 24h");
+        polish.add(" Bilet ulgowy 24 h");
+        polish.add(" Bilet normalny 48 h");
+        polish.add(" Bilet ulgowy 48 h");
 
 
         english.add("<html> <p style=\"text-align:center;\">Regular ticket 20min<br>2,80zł</p></html>");//0
@@ -52,6 +62,16 @@ public class StringHandler {
         english.add("To pay: ");
         english.add("<html> <p style=\"text-align:center;\">Pay via contactless</p></html>");
         english.add("Exit");//18
+        english.add(" Regular ticket 20min");//19
+        english.add(" Half-price ticket 20min");
+        english.add(" Regular ticket 40min");
+        english.add(" Half-price ticket 40min");
+        english.add(" Regular ticket 60min");
+        english.add(" Half-price ticket 60min");
+        english.add(" Regular ticket 24h");
+        english.add(" Half-price ticket 24h");
+        english.add(" Regular ticket 48h");
+        english.add(" Half-price ticket 48h");
 
         german.add("<html> <p style=font-size:8px;\"text-align:center;\">Normales Ticket 20min <br>2,80zł</p></html>");//0
         german.add("<html> <p style=font-size:8px;\"text-align:center;\">Normales Ticket 40min <br>3,80zł</p></html>");
@@ -72,6 +92,17 @@ public class StringHandler {
         german.add("Zu zahlen: ");
         german.add("<html> <p style=\"text-align:center;\">Bezahlen Sie mit einer kontaktlosen Zahlung</p></html>");
         german.add("Ausfahrt");//18
+        german.add(" Normales Ticket 20min");//19
+        german.add(" Konzessionsticket 20min");
+        german.add(" Normales Ticket 40min");
+        german.add(" Konzessionsticket 40min");
+        german.add(" Normales Ticket 60min");
+        german.add(" Konzessionsticket 60min");
+        german.add(" Normales Ticket 24h");
+        german.add(" Konzessionsticket 24h");
+        german.add(" Normales Ticket 48h");
+        german.add(" Konzessionsticket 48h");
+
     }
 
     public ArrayList getPolish(){

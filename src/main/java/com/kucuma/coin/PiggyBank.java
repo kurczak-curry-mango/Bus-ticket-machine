@@ -73,7 +73,7 @@ public class PiggyBank{
         { System.out.println("REST ERROR!!! Wyszedles poza granice!!");}
     }
 
-   public boolean buy(double money,double price,int []tab )
+  public  boolean buy(double money,double price,int []tab )
     {
         if(money>=price)
         {

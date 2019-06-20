@@ -1,12 +1,34 @@
 package com.kucuma.ticket;
 
+import com.kucuma.StringHandler;
+
+import java.util.ArrayList;
 import java.util.Scanner;
+
+
 public class Tickets extends  Ticket{
    public Tickets()
     {
         super();
     }
 
+    public void changeticketlangENG(){
+        for(Ticket ticket : blist){
+            ticket.type=language.get(ticket.typeID);
+        }
+
+    }
+
+    public void changeticketlangPL(){
+        for(Ticket ticket : blist){
+            ticket.type=language.get(ticket.typeID);
+        }
+    }
+    public void changeticketlangDE(){
+        for(Ticket ticket : blist){
+            ticket.type=language.get(ticket.typeID);
+        }
+    }
    public void addTickets(int index)
     {
         boolean tmp=true;
@@ -18,6 +40,7 @@ public class Tickets extends  Ticket{
                 tmp=false;
                 break;
             }
+            changeticketlangENG();
         }
         if(tmp) {
             this.blist.add(tickets.get(index));
