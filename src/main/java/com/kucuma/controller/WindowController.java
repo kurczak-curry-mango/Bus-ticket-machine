@@ -1,15 +1,20 @@
 package com.kucuma.controller;
 
 import com.kucuma.StringHandler;
+import com.kucuma.coin.Coin;
 import com.kucuma.coin.Coins;
 import com.kucuma.coin.PiggyBank;
 import com.kucuma.ticket.Tickets;
 import com.kucuma.view.Window;
-
+import com.kucuma.controller.MoneyWindowController;
+import javax.imageio.ImageIO;
+import java.io.File;
+import java.io.IOException;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URL;
 import java.util.ArrayList;
 
 public class WindowController {
@@ -92,9 +97,9 @@ public class WindowController {
         langPL=window.getLangPL();
         langENG=window.getLangENG();
         langDE=window.getLangDE();
-        finalprice.setText(language.get(16)+ "0.0zl");
+        finalprice.setText(language.get(16)+ "0.00zl");
         finalprice.setFont(new Font("Roboto", Font.PLAIN, 20));
-        moneyThrown.setText(language.get(15)+"0.0zl");
+        moneyThrown.setText(language.get(15)+"0.00zl");
         moneyThrown.setFont(new Font("Roboto", Font.PLAIN, 20));
 
     }
@@ -225,32 +230,10 @@ public class WindowController {
                 coin.removeCoins();
                 updateStrings();
                 if(tempHowMuch>0) {
-                    Timer timer=new Timer(2000, new ActionListener() {
-                        @Override
-                        public void actionPerformed(ActionEvent e) {
-                            updateStrings();
-                        }
-
-                    });
                     wyswietlacz.append(language.get(14) + tempHowMuch+"zl");
-                    timer.setRepeats(false); // Only execute once
-                    timer.start();
 
-                }
-                else{
-                    Timer timerFail=new Timer(2000, new ActionListener() {
-                        @Override
-                        public void actionPerformed(ActionEvent e) {
-                            updateStrings();
-                        }
-
-                    });
-                    wyswietlacz.append("\n\n"+language.get(32));
-                    timerFail.setRepeats(false); // Only execute once
-                    timerFail.start();
                 }
                 moneyThrown.setText(language.get(15) + coin.howMuchmoney() + "zl");
-
             }
         });
         buyTicket.addActionListener(new ActionListener() {
@@ -336,7 +319,7 @@ public class WindowController {
                 moneyThrown.setText(language.get(15) + coin.howMuchmoney() + "zl");
                 wyswietlacz.setText(language.get(33)+"\n");
                 wyswietlacz.append(language.get(34)+"\n");
-                wyswietlacz.append(language.get(35)+piggy.getRest()+"zl\n");
+                wyswietlacz.append(language.get(35)+piggy.getRest()+ "zl\n");
                 wyswietlacz.append(language.get(36));
                 Timer timer = new Timer(7000, new ActionListener() {
                     @Override

@@ -23,7 +23,7 @@ public class AppTest
         Coins coins = new Coins();
         coins.insertCoin(5);
         coins.insertCoin(1);
-        Assert.assertTrue(coins.howMuchmoney()==5.2);
+        Assert.assertEquals(coins.howMuchmoney(),5.2);
     }
 
     @Test(expected = IndexOutOfBoundsException.class)
