@@ -89,6 +89,7 @@ public class WindowController {
         moneyThrown=window.getMoneyThrown();
         MoneyController = new MoneyWindowController(moneyThrown, coin);
         language=stringHandler.getPolish();
+        ticket.language=stringHandler.getPolish();
         languagePanel=window.getLanguagePanel();
         langPL=window.getLangPL();
         langENG=window.getLangENG();
@@ -96,9 +97,9 @@ public class WindowController {
 
     }
     private void initApearance(){
-        finalprice.setText("Do zaplaty: 0zl");
+        finalprice.setText(language.get(16)+ "0.00zl");
         finalprice.setFont(new Font("Roboto", Font.PLAIN, 20));
-        moneyThrown.setText("Wrzucono: 0.00zl");
+        moneyThrown.setText(language.get(15)+"0.00zl");
         moneyThrown.setFont(new Font("Roboto", Font.PLAIN, 20));
         bil1n.setText(language.get(0));
         bil2n.setText(language.get(1));
@@ -133,7 +134,7 @@ public class WindowController {
         wyswietlacz.setSize(50, 50);
         wyswietlacz.setRows(10);
         wyswietlacz.setFont(new Font("Consolas", Font.PLAIN, 14));
-        wyswietlacz.setText("Automat Biletowy MPK - WITAMY! \nWybierz bilet!");
+        wyswietlacz.setText(language.get(13));
         wyswietlacz.setLineWrap(true);
         wyswietlacz.setEditable(false);
         windowPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
@@ -224,10 +225,10 @@ public class WindowController {
                 coin.removeCoins();
                 updateStrings();
                 if(tempHowMuch>0) {
-                    wyswietlacz.append("\nZwrócono \t" + tempHowMuch+"zl");
+                    wyswietlacz.append(language.get(14) + tempHowMuch+"zl");
 
                 }
-                moneyThrown.setText("Wrzucono: " + coin.howMuchmoney() + "zl");
+                moneyThrown.setText(language.get(15) + coin.howMuchmoney() + "zl");
             }
         });
         buyTicket.addActionListener(new ActionListener() {
@@ -238,7 +239,7 @@ public class WindowController {
                 piggy.buy(coin.howMuchmoney(),ticket.priceFinal(),coin.getTab());
                 coin.removeCoins();
                 ticket.removeTickets();
-                moneyThrown.setText("Wrzucono: " + coin.howMuchmoney() + "zl");
+                moneyThrown.setText(language.get(15) + coin.howMuchmoney() + "zl");
                 piggy.ileKurwawSkarbonce();
                 updateStrings();
             }
@@ -254,32 +255,57 @@ public class WindowController {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                language=stringHandler.getPolish();
-                initApearance();
+                changeLangPL();
             }
         });
         langENG.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                language=stringHandler.getEnglish();
-                System.out.println(language.get(0));
-                initApearance();
+                changeLangENG();
             }
         });
         langDE.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                language=stringHandler.getGerman();
-                initApearance();
+                changeLangDE();
+
             }
         });
     }
 
     public void updateStrings(){
-        finalprice.setText("Do zaplaty: " + ticket.priceFinal() + "zl");
-        // PO DODANIU KLASY COIN NALEZY UZUPELNIC O ZMIENNA PRZECHOWYWUJACA WRZUCONE PIENIADZE
-
+        finalprice.setText(language.get(16) + ticket.priceFinal() + "zl");
         wyswietlacz.setText(ticket.bilety());
 
-}}
+
+
+}
+    public void changeLangENG(){
+        language=stringHandler.getEnglish();
+        ticket.language=stringHandler.getEnglish();
+        ticket.changeticketlangENG();
+        //ticket.createTicketTable();
+
+        initApearance();
+        wyswietlacz.setText(ticket.bilety());
+    }
+    public void changeLangPL(){
+        language=stringHandler.getPolish();
+        ticket.language=stringHandler.getPolish();
+        ticket.changeticketlangPL();
+        //ticket.createTicketTable();
+
+        initApearance();
+        wyswietlacz.setText(ticket.bilety());
+    }
+    public void changeLangDE(){
+        language=stringHandler.getGerman();
+        ticket.language=stringHandler.getGerman();
+        ticket.changeticketlangDE();
+        //ticket.createTicketTable();
+
+        initApearance();
+        wyswietlacz.setText(ticket.bilety());
+    }
+}
 
