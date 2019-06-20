@@ -35,7 +35,7 @@ public class Tickets extends  Ticket{
         for(Ticket ticket : blist){
             if(ticket==tickets.get(index)){
                 ticket.setTicketAmmount();
-                ticketsInCart.add(ticket.getType());
+                ticketsInCart.add(ticket.getTypeID());
                 //System.out.println("prawda!");
                 tmp=false;
                 break;
@@ -44,7 +44,7 @@ public class Tickets extends  Ticket{
         }
         if(tmp) {
             this.blist.add(tickets.get(index));
-            ticketsInCart.add(tickets.get(index).getType());
+            ticketsInCart.add(tickets.get(index).getTypeID());
             System.out.println("dodano bilet " + index);
         }
         changeticketlangENG();
@@ -66,17 +66,18 @@ public class Tickets extends  Ticket{
        //System.out.println("Podaj nr biletu który chcesz usunąć");
        //int nr = scan.nextInt();
        try {
+           System.out.println(ticketsInCart);
            if(blist.size()>0){
            //blist.getLast().setTicketAmmountM();
            for(Ticket ticket: blist){
-               if(ticket.getType().equals(ticketsInCart.getLast())&&ticket.getTicketAmmount()>1){
+               if(ticket.getTypeID()==(ticketsInCart.getLast())&&ticket.getTicketAmmount()>1){
                    ticket.setTicketAmmountM();
                    ticketsInCart.removeLast();
                    break;
                }
-               else if(ticket.getType().equals(ticketsInCart.getLast())&&ticket.getTicketAmmount()==1){
+               else if(ticket.getTypeID()==(ticketsInCart.getLast())&&ticket.getTicketAmmount()==1){
                    blist.remove(ticket);
-                       ticketsInCart.removeLast();
+                   ticketsInCart.removeLast();
                    break;
                }
            }

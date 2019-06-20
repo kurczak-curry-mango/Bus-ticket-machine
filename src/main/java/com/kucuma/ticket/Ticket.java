@@ -16,7 +16,7 @@ public class Ticket   {
     public int typeID;
     public LinkedList<Ticket> blist = new LinkedList<Ticket>(); //lista biletów w koszyku
     public LinkedList<Ticket> tickets = new LinkedList<Ticket>(); // lista wszystkich dostepnyh koszuków
-    public LinkedList<String> ticketsInCart= new LinkedList<>();
+    public LinkedList<Integer> ticketsInCart= new LinkedList<>();
     //String bought = ""; nie wiem wiec zakomentowałem
     private StringHandler stringHandler = new StringHandler();
     public ArrayList<String> language= new ArrayList<>();
