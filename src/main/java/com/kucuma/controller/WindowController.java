@@ -94,13 +94,14 @@ public class WindowController {
         langPL=window.getLangPL();
         langENG=window.getLangENG();
         langDE=window.getLangDE();
-
-    }
-    private void initApearance(){
         finalprice.setText(language.get(16)+ "0.00zl");
         finalprice.setFont(new Font("Roboto", Font.PLAIN, 20));
         moneyThrown.setText(language.get(15)+"0.00zl");
         moneyThrown.setFont(new Font("Roboto", Font.PLAIN, 20));
+
+    }
+    private void initApearance(){
+
         bil1n.setText(language.get(0));
         bil2n.setText(language.get(1));
         bil3n.setText(language.get(2));
@@ -274,6 +275,7 @@ public class WindowController {
 
     public void updateStrings(){
         finalprice.setText(language.get(16) + ticket.priceFinal() + "zl");
+        moneyThrown.setText(language.get(15)+coin.howMuchmoney()+"zl");
         wyswietlacz.setText(ticket.bilety());
 
 
@@ -286,6 +288,7 @@ public class WindowController {
         //ticket.createTicketTable();
 
         initApearance();
+        updateStrings();
         wyswietlacz.setText(ticket.bilety());
     }
     public void changeLangPL(){
@@ -293,7 +296,7 @@ public class WindowController {
         ticket.language=stringHandler.getPolish();
         ticket.changeticketlangPL();
         //ticket.createTicketTable();
-
+        updateStrings();
         initApearance();
         wyswietlacz.setText(ticket.bilety());
     }
@@ -302,7 +305,7 @@ public class WindowController {
         ticket.language=stringHandler.getGerman();
         ticket.changeticketlangDE();
         //ticket.createTicketTable();
-
+        updateStrings();
         initApearance();
         wyswietlacz.setText(ticket.bilety());
     }
