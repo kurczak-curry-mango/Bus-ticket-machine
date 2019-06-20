@@ -88,6 +88,7 @@ public class WindowController {
         langPL=window.getLangPL();
         langENG=window.getLangENG();
         langDE=window.getLangDE();
+        wyswietlacz.setSize(new Dimension(1,1));
 
     }
     private void initApearance(){
@@ -132,6 +133,9 @@ public class WindowController {
         wyswietlacz.setLineWrap(true);
         wyswietlacz.setEditable(false);
         windowPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        windowPane.setMaximumSize(new Dimension(100,100));
+        windowPane.setPreferredSize(new Dimension(100,100));
+
     }
     private void initListeners(){
             bil1n.addActionListener(new ActionListener() {

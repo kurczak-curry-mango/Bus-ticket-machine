@@ -73,7 +73,11 @@ public class MoneyWindowController  {
         throw50zl.setIcon(new ImageIcon("src/main/java/com/kucuma/images/50.png"));
         throw100zl.setIcon(new ImageIcon("src/main/java/com/kucuma/images/100.png"));
         payByCard.setIcon(new ImageIcon("src/main/java/com/kucuma/images/card.png"));
-        payByCard.setText("<html> <p style=\"text-align:center;\">Zaplac karta poprzez zblizenie</p></html>");
+        payByCard.setText("<html> <p style=font-size:12px;\"text-align:center;\"><b>PayPass</b></p></html>");
+        ExitButton.setIcon(new ImageIcon(("src/main/java/com/kucuma/images/exitL.png")));
+        ExitButton.setOpaque(false);
+        ExitButton.setContentAreaFilled(false);
+        ExitButton.setBorderPainted(false);
         throw10gr.setOpaque(false);
         throw10gr.setContentAreaFilled(false);
         throw10gr.setBorderPainted(false);
