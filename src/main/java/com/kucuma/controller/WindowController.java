@@ -295,8 +295,7 @@ public class WindowController {
 
         initApearance();
         updateStrings();
-        initApearance();
-        wyswietlacz.setText(ticket.bilety());
+        wyswietlacz.setText(ticket.ticketString());
     }
     public void changeLangDE(){
         language=stringHandler.getGerman();
@@ -305,7 +304,8 @@ public class WindowController {
         MoneyController.language=stringHandler.getGerman();
         //ticket.createTicketTable();
         initApearance();
-        wyswietlacz.setText(ticket.bilety());
+        updateStrings();
+        wyswietlacz.setText(ticket.ticketString());
     }
 }
 
