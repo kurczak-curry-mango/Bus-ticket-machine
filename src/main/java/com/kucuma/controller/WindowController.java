@@ -1,20 +1,15 @@
 package com.kucuma.controller;
 
 import com.kucuma.StringHandler;
-import com.kucuma.coin.Coin;
 import com.kucuma.coin.Coins;
 import com.kucuma.coin.PiggyBank;
 import com.kucuma.ticket.Tickets;
 import com.kucuma.view.Window;
-import com.kucuma.controller.MoneyWindowController;
-import javax.imageio.ImageIO;
-import java.io.File;
-import java.io.IOException;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.net.URL;
 import java.util.ArrayList;
 
 public class WindowController {
@@ -238,7 +233,7 @@ public class WindowController {
 
                 if(piggy.buy(coin.howMuchmoney(),ticket.priceFinal(),coin.getTab())){
                     coin.removeCoins();
-                    ticket.removeTickets();
+                    ticket.removeAllTickets();
                 }
                 moneyThrown.setText(language.get(15) + coin.howMuchmoney() + "zl");
                 updateStrings();
@@ -276,7 +271,7 @@ public class WindowController {
     public void updateStrings(){
         finalprice.setText(language.get(16) + ticket.priceFinal() + "zl");
         moneyThrown.setText(language.get(15)+coin.howMuchmoney()+"zl");
-        wyswietlacz.setText(ticket.bilety());
+        wyswietlacz.setText(ticket.ticketString());
 
 
 
@@ -289,7 +284,7 @@ public class WindowController {
         MoneyController.language=stringHandler.getEnglish();
         initApearance();
         updateStrings();
-        wyswietlacz.setText(ticket.bilety());
+        wyswietlacz.setText(ticket.ticketString());
     }
     public void changeLangPL(){
         language=stringHandler.getPolish();
@@ -300,6 +295,7 @@ public class WindowController {
 
         initApearance();
         updateStrings();
+        initApearance();
         wyswietlacz.setText(ticket.bilety());
     }
     public void changeLangDE(){
@@ -309,8 +305,6 @@ public class WindowController {
         MoneyController.language=stringHandler.getGerman();
         //ticket.createTicketTable();
         initApearance();
-        updateStrings();
-
         wyswietlacz.setText(ticket.bilety());
     }
 }
