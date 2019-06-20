@@ -272,7 +272,7 @@ public class WindowController {
             }
         });
     }
-
+//dd
     public void updateStrings(){
         finalprice.setText("Do zaplaty: " + ticket.priceFinal() + "zl");
         // PO DODANIU KLASY COIN NALEZY UZUPELNIC O ZMIENNA PRZECHOWYWUJACA WRZUCONE PIENIADZE
