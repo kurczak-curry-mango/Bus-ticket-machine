@@ -40,14 +40,14 @@ public class Tickets extends  Ticket{
                 tmp=false;
                 break;
             }
-            changeticketlangENG();
+
         }
         if(tmp) {
             this.blist.add(tickets.get(index));
             ticketsInCart.add(tickets.get(index).getType());
             System.out.println("dodano bilet " + index);
         }
-
+        changeticketlangENG();
         };
 
    public void removeAllTickets(){
@@ -88,7 +88,7 @@ public class Tickets extends  Ticket{
 
    }
 
-    public String bilety()
+    public String ticketString()
     {
         StringBuilder name= new StringBuilder();
         if(blist.size()==0)
@@ -99,7 +99,7 @@ public class Tickets extends  Ticket{
             String line=String.format("%3s %15s %15s\n", "Nr.", "Typ biletu", "ilosc") ;
             name.append(line);
             for (Ticket ticket : blist) {
-                line= String.format("%2d. %-25s %-4d", number, ticket.type, ticket.TicketAmmount );
+                line= String.format("%2d. %-22s %-4d", number, ticket.type, ticket.TicketAmmount );
                 //System.out.println(line);
                 name.append(line).append("\n");
                 number++;
