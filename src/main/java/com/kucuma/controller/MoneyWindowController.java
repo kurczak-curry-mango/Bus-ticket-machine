@@ -25,6 +25,7 @@ public class MoneyWindowController  {
     private JButton payByCard;
     private JLabel moneyThrown;
     private Coins coin;
+    public boolean checkCard;
     private StringHandler stringHandler = new StringHandler();
     public ArrayList<String> language= new ArrayList<>();
 
@@ -191,8 +192,15 @@ public class MoneyWindowController  {
         payByCard.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-                updateSTR();;
+                if(checkCard==false){
+                    checkCard=true;
+                    payByCard.setIcon(new ImageIcon("src/main/java/com/kucuma/images/cardActive.png"));
+                }
+                else if(checkCard==true){
+                    checkCard=false;
+                    payByCard.setIcon(new ImageIcon("src/main/java/com/kucuma/images/card.png"));
+                }
+                updateSTR();
             }
         });
             ExitButton.addActionListener(new ActionListener() {
