@@ -34,13 +34,12 @@ public class PiggyBank{
             System.out.println(piggy.getCoinAmount());
     }
 
-    void addingToPiggy(int[] tab)
+  public  void addingToPiggy(int[] tab)
     {
         try{
-        int [] add = tab;
         for(int j = 0 ;j<piggy.size()-1;j++)
         {
-          piggy.get(j).setCoinAmountI(add[j]);
+          piggy.get(j).setCoinAmountI(tab[j]);
         }
         }catch(IndexOutOfBoundsException e)
         {
