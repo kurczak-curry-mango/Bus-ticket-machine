@@ -24,7 +24,7 @@ public class Coins extends Coin{
         obj.add(new Coin( "10 złoty",10,0 ));
         obj.add(new Coin( "20 złoty",20,0 ));
         obj.add(new Coin( "50 złoty",50,0 ));
-        obj.add(new Coin( "100 złoty",100,0 ));                     
+        obj.add(new Coin( "100 złoty",100,0 ));
     }
     //dodwanie
     public void insertCoin(int inx) {

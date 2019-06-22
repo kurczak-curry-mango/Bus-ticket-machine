@@ -7,10 +7,10 @@ public class StringHandler {
     public StringHandler(){
         genLang();
     }
-    private static ArrayList<String> polish = new ArrayList<>();
-    private static ArrayList<String> english = new ArrayList<>();
-    private static ArrayList<String> german = new ArrayList<>();
-    private static void genLang() {
+    public static ArrayList<String> polish = new ArrayList<>();
+    public static ArrayList<String> english = new ArrayList<>();
+    public static ArrayList<String> german = new ArrayList<>();
+    public static void genLang() {
 
         polish.add("<html> <p style=\"text-align:center;\">Bilet 20min normalny<br>2,80zł</p></html>"); //0
         polish.add("<html> <p style=\"text-align:center;\">Bilet 40min normalny<br>3,80zł</p></html>");

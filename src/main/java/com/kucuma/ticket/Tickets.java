@@ -65,6 +65,8 @@ public class Tickets extends  Ticket{
        //Scanner scan = new Scanner(System.in);
        //System.out.println("Podaj nr biletu który chcesz usunąć");
        //int nr = scan.nextInt();
+       if(blist.size()==0)
+           throw new IndexOutOfBoundsException("No Tickets to remove");
        try {
            System.out.println(ticketsInCart);
            if(blist.size()>0){

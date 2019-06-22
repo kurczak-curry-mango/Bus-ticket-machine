@@ -1,4 +1,5 @@
 package com.kucuma.coin;
+import java.math.BigDecimal;
 import java.util.LinkedList;
 
 public class PiggyBank{
@@ -10,6 +11,9 @@ public class PiggyBank{
 
     };
 
+
+
+    private double rest=0.00;
     protected void createRestList(LinkedList<Coin> obj){
 
         obj.add(new Coin("10 groszy", 0.1,200));
@@ -30,24 +34,25 @@ public class PiggyBank{
             System.out.println(piggy.getCoinAmount());
     }
 
-    void addingToPiggy(int[] tab)
+  public  void addingToPiggy(int[] tab)
     {
         try{
-        int [] add = tab;
         for(int j = 0 ;j<piggy.size()-1;j++)
         {
-          piggy.get(j).setCoinAmountI(add[j]);
+          piggy.get(j).setCoinAmountI(tab[j]);
         }
         }catch(IndexOutOfBoundsException e)
         {
             System.out.println("addingToPiggyERROR: Out of Bound!!!");
         }
     }
-
+    public double getRest() {
+        return rest;
+    }
    public double countRest(double money, double price )
     {
-        double rest=0;
-        rest=money-price;
+
+        rest=(double)Math.round(100*(money-price))/100;
         return rest;
     }
 
