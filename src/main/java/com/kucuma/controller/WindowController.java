@@ -331,7 +331,10 @@ public class WindowController {
                 timer.start();
 
             }
-            else{
+            else if(MoneyController.checkCard==true){
+                
+            }
+                else{
                 Timer timerFail=new Timer(2000, new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
