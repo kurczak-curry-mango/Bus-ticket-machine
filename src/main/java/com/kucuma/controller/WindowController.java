@@ -330,7 +330,7 @@ public class WindowController {
     }
 
     public void buyTicketOperation(){
-            if(piggy.buy(coin.howMuchmoney(),ticket.priceFinal(),coin.getTab())){
+            if(piggy.buy(coin.howMuchmoney(),ticket.priceFinal(),coin.getTab())&&!MoneyController.checkCard){
                 coin.removeCoins();
                 ticket.removeAllTickets();
                 moneyThrown.setText(language.get(15) + coin.howMuchmoney() + "zl");
@@ -349,7 +349,25 @@ public class WindowController {
 
             }
             else if(MoneyController.checkCard==true){
-                
+                double cardRest=0.0;
+                cardRest=coin.howMuchmoney();
+                coin.removeCoins();
+                ticket.removeAllTickets();
+                moneyThrown.setText(language.get(15) + coin.howMuchmoney() + "zl");
+                wyswietlacz.setText(language.get(33)+"\n");
+                wyswietlacz.append(language.get(34)+"\n");
+                wyswietlacz.append(language.get(35)+cardRest+"zl\n");
+                wyswietlacz.append(language.get(36));
+                finalprice.setText(language.get(16) + ticket.priceFinal() + "zl");
+
+                Timer timer = new Timer(7000, new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent arg0) {
+                        updateStrings();
+                    }
+                });
+                timer.setRepeats(false); // Only execute once
+                timer.start();
             }
                 else{
                 Timer timerFail=new Timer(2000, new ActionListener() {
