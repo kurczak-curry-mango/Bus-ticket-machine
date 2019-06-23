@@ -45,7 +45,7 @@ public class Tickets extends  Ticket{
         if(tmp) {
             this.blist.add(tickets.get(index));
             ticketsInCart.add(tickets.get(index).getTypeID());
-            System.out.println("dodano bilet " + index);
+           // System.out.println("dodano bilet " + index);
         }
         changeticketlangENG();
         };
@@ -55,7 +55,7 @@ public class Tickets extends  Ticket{
            if(blist.size()>0){
               blist.clear();
            }
-           else System.out.println("nie ma biletu");
+           else {}//System.out.println("nie ma biletu");
        }catch (IndexOutOfBoundsException e){
            System.out.println("Nie ma takiego indexu");
        }
@@ -68,7 +68,7 @@ public class Tickets extends  Ticket{
        if(blist.size()==0)
            throw new IndexOutOfBoundsException("No Tickets to remove");
        try {
-           System.out.println(ticketsInCart);
+           //System.out.println(ticketsInCart);
            if(blist.size()>0){
            //blist.getLast().setTicketAmmountM();
            for(Ticket ticket: blist){
@@ -84,7 +84,7 @@ public class Tickets extends  Ticket{
                }
            }
            }
-           else System.out.println("nie ma biletu");
+           else {}//System.out.println("nie ma biletu");
        }catch (IndexOutOfBoundsException e){
            System.out.println("Nie ma takiego indexu");
        }
@@ -115,7 +115,8 @@ public class Tickets extends  Ticket{
     {
         double price=0;
         if(blist.size()==0)
-        {System.out.println("Nie wybrales zadnego biletu!!");}
+        {//System.out.println("Nie wybrales zadnego biletu!!");
+             }
         else{
 
 

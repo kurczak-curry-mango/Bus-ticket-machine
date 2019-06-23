@@ -31,7 +31,7 @@ public class PiggyBank{
      public void howMuchInPiggy()
     {
         for(Coin piggy : piggy)
-            System.out.println(piggy.getCoinAmount());
+        {}//System.out.println(piggy.getCoinAmount());
     }
 
   public  void addingToPiggy(int[] tab)
@@ -69,7 +69,7 @@ public class PiggyBank{
                         p = piggy.get(i).getCoinAmount();
                     else
                         x = (double) Math.round(100 * (x - (piggy.get(i).getValue() * p))) / 100; //zmniejsz reszte o wydane
-                    System.out.println(piggy.get(i).getValue() + "\tx\t" + p);
+                   // System.out.println(piggy.get(i).getValue() + "\tx\t" + p);
                     piggy.get(i).setCoinAmountMi(p);
                 }
                 i--;            //next nomial
@@ -88,7 +88,7 @@ public class PiggyBank{
         }
 
         else{
-            System.out.println("Wrzuc wiecej pieniedz");
+            //System.out.println("Wrzuc wiecej pieniedz");
             return false;
         }
     }

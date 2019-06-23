@@ -34,13 +34,14 @@ public class Coins extends Coin{
         if(amountOfCoins<200) {
             this.moneyThrowed.add(coins.get(inx));
             if(coins.get(inx).getValue() < 5){
-                System.out.println("dodano monete " + coins.get(inx).getName());}
+               // System.out.println("dodano monete " + coins.get(inx).getName());
+                }
             else
-                System.out.println("dodano banknot " + coins.get(inx).getName());
+            {}// System.out.println("dodano banknot " + coins.get(inx).getName());
             amountOfCoins++;
             coins.get(inx).setCoinAmount();
         }else
-            System.out.println("Przekroczono już limit monet!!!");
+        {}//System.out.println("Przekroczono już limit monet!!!");
     }catch (IndexOutOfBoundsException e){
             System.out.println("Bład w dodawaniu monet");
         }
@@ -48,7 +49,7 @@ public class Coins extends Coin{
     //usuwanie monet
     public void removeCoins() {
         try {
-            System.out.println("Zwrócono \t" + howMuchmoney());
+           // System.out.println("Zwrócono \t" + howMuchmoney());
             this.moneyThrowed.clear();
             for(Coin coins : coins)
                 coins.setCoinAmountI(1);
@@ -65,7 +66,7 @@ public class Coins extends Coin{
     public double howMuchmoney() {
         double cash=0;
         if(moneyThrowed.size()==0)
-            System.out.println("Nie wrzuciłes żadnej monety!!");
+        {}// System.out.println("Nie wrzuciłes żadnej monety!!");
         else
         {
             for (Coin coin : moneyThrowed)

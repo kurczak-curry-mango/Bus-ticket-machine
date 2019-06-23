@@ -214,8 +214,22 @@ public class WindowController {
         returnTicket.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ticket.removeTickets();
-                updateStrings();
+                if(ticket.blist.size()==0){
+                    Timer timerFail=new Timer(2000, new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                            updateStrings();
+                        }
+
+                    });
+                    wyswietlacz.append("\n\n"+language.get(32));
+                    timerFail.setRepeats(false); // Only execute once
+                    timerFail.start();
+                }
+                else {
+                    ticket.removeTickets();
+                    updateStrings();
+                }
             }
     });
         returnMoney.addActionListener(new ActionListener() {
